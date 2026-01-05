@@ -3,8 +3,8 @@ html, body {
   height: 100%;
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #ffffff; /* tout le fond blanc */
-  color: #222222; /* texte sombre */
+  background-color: #ffffff; /* fond blanc */
+  color: #222222;
 }
 
 /* ===== Barre de navigation ===== */
@@ -32,16 +32,19 @@ nav a:hover {
 header {
   text-align: center;
   margin-bottom: 20px;
-  background-color: #ffffff; /* blanc */
+  background-color: #ffffff;
   border-bottom: 3px solid #007bff;
 }
 header h1 {
   color: #007bff;
+  font-size: 40px;   /* titre plus grand */
+  padding: 25px 0;   /* espace vertical autour du titre */
+  margin: 0;
 }
 
 /* ===== Conteneurs ===== */
 main, section, div {
-  background-color: #ffffff; /* blanc */
+  background-color: #ffffff;
   padding: 20px;
   margin-bottom: 20px;
 }
@@ -68,9 +71,16 @@ main, section, div {
   color: #222;
   border: 2px solid #E0A26D;
   max-width: 500px;
+  text-align: left; /* texte aligné à gauche */
 }
 .pdf-link:hover {
-  background-color: #FFB566; /* un peu plus vif au hover */
+  background-color: #FFB566; /* hover un peu plus vif */
+}
+
+/* ===== Pour aligner les liens à gauche ===== */
+.left-links {
+  text-align: left;
+  margin-left: 15px;
 }
 
 /* ===== Images ===== */
