@@ -14,15 +14,16 @@ nav {
   left: 0;
   width: 100%;
   background-color: #007bff;
-  padding: 8px 0;
+  padding: 4px 0; /* réduit l’espace vertical (au lieu de 8px) */
   z-index: 1000;
 }
+
 nav a {
   color: #fff;
   font-weight: bold;
   text-decoration: none;
   margin: 0 15px;
-  font-size: 17px;
+  font-size: 15px; /* légèrement plus petit pour réduire la hauteur */
 }
 nav a:hover {
   text-decoration: underline;
