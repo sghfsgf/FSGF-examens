@@ -1,0 +1,25 @@
+body {
+  background-color: #ADD8E6; /* bleu clair */
+  font-family: Arial, sans-serif;
+  color: #222;
+  margin: 0;
+  padding: 15px;
+}
+
+header {
+  text-align: center;
+  background: #ffffff;
+  border-bottom: 3px solid #007bff;
+}
+
+.pdf-link {
+  background-color: #007bff;
+  color: #fff;
+  padding: 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  display: block;
+  margin: 10px auto;
+  width: 90%;
+  max-width: 450px;
+}
