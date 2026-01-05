@@ -1,21 +1,66 @@
+/* ===== Style global ===== */
 body {
-  background-color: #87CEFA; /* fond global bleu clair */
+  background-color: #ADD8E6; /* bleu clair */
   font-family: Arial, sans-serif;
   color: #222;
   margin: 0;
   padding: 15px;
 }
 
+/* ===== Bande du titre ===== */
 header {
   text-align: center;
   padding: 20px 0;
-  background-color: #87CEFA; /* bande titre bleu clair */
+  background-color: #ADD8E6; /* bleu clair pour le header */
   border-bottom: 3px solid #007bff;
 }
 
+/* Couleur du texte du titre */
 header h1 {
   font-size: 28px;
   color: #007bff;
   margin: 0;
   padding: 10px 0;
+}
+
+/* ===== Logo en haut à gauche ===== */
+.logo-fixed {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  max-width: 120px;
+  height: auto;
+  z-index: 1000;
+}
+
+/* ===== Sous-titre ===== */
+.sous-titre {
+  text-align: right;
+  font-size: 20px;
+  margin: 20px 0;
+  font-weight: bold;
+  color: #444;
+}
+
+/* ===== Boutons liens vers les PDF ===== */
+.pdf-link {
+  display: block;
+  width: calc(100% - 40px);
+  max-width: 500px;
+  margin: 10px auto;
+  padding: 14px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  text-align: center;
+  border: 2px solid #0056b3;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.pdf-link:hover {
+  background-color: #0056b3;
+  transform: scale(1.03);
 }
