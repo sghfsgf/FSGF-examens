@@ -1,11 +1,11 @@
 /* ===== Style global ===== */
 body {
   background-color: #ADD8E6; /* bleu clair */
-  font-family: Arial, sans-serif;
-  color: #222;
-  margin: 0;
-  padding: 15px;
+  min-height: 100vh;        /* s’étend sur toute la hauteur visible */
+  margin: 0;                /* supprime marges éventuelles qui cachent le fond */
+  padding: 0;               /* optionnel mais utile */
 }
+
 
 /* ===== Bande du titre ===== */
 header {
