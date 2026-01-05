@@ -2,71 +2,88 @@
 html, body {
   height: 100%;
   margin: 0;
-  font-family: Arial, sans-serif; /* police moderne et lisible */
+  font-family: Arial, sans-serif;
+  background-color: #ffffff; /* tout le fond blanc */
+  color: #222222; /* texte sombre */
 }
 
-body {
-  background-color: #ffffff; /* fond blanc */
-  color: #222222; /* texte sombre par défaut */
+/* ===== Barre de navigation ===== */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #007bff;
+  padding: 8px 0;
+  z-index: 1000;
+}
+nav a {
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 17px;
+}
+nav a:hover {
+  text-decoration: underline;
 }
 
 /* ===== Header ===== */
 header {
   text-align: center;
-  padding: 20px 0;
+  margin-bottom: 20px;
   background-color: #ffffff; /* blanc */
-  border-bottom: 3px solid #007bff; /* bleu foncé */
+  border-bottom: 3px solid #007bff;
 }
-
 header h1 {
-  font-size: 28px;
-  color: #007bff; /* texte bleu foncé */
-  margin: 0;
-  padding: 10px 0;
+  color: #007bff;
 }
 
-/* ===== Sous-titre (optionnel) ===== */
-.sous-titre {
-  text-align: right;
-  font-size: 20px;
-  margin: 10px 20px;
-  font-weight: bold;
-  color: #444444; /* gris foncé */
-}
-
-/* ===== Conteneurs principaux ===== */
+/* ===== Conteneurs ===== */
 main, section, div {
   background-color: #ffffff; /* blanc */
-  color: #222222; /* texte sombre */
   padding: 20px;
-  margin-bottom: 20px; /* espacement entre sections */
-  box-sizing: border-box;
+  margin-bottom: 20px;
 }
 
-/* ===== Boutons liens vers PDF/Excel ===== */
+/* ===== Titres des sections ===== */
+.section-title {
+  text-align: left;
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 30px;
+  margin-bottom: 12px;
+  color: #0056b3;
+}
+
+/* ===== Boutons liens PDF/Excel ===== */
 .pdf-link {
   display: block;
-  width: calc(100% - 40px);
-  max-width: 500px;
-  margin: 10px auto;
-  padding: 14px 20px;
-  font-size: 18px;
-  font-weight: bold;
-  background-color: #FFDBBB; /* orangé clair */
-  color: #222222; /* texte sombre pour contraste */
+  margin: 8px 0;
+  font-size: 17px;
   text-decoration: none;
-  border-radius: 6px;
-  text-align: center;
-  border: 2px solid #E0A26D; /* bordure orangé foncé */
-  transition: background-color 0.3s, transform 0.2s;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #FFDBBB; /* orangé clair */
+  color: #222;
+  border: 2px solid #E0A26D;
+  max-width: 500px;
 }
-
 .pdf-link:hover {
-  background-color: #FFC88C; /* orangé plus vif au survol */
-  transform: scale(1.03);
+  background-color: #FFB566; /* un peu plus vif au hover */
 }
 
-/* ===== Logo fixe en haut à gauche ===== */
+/* ===== Images ===== */
+.exam-image {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* ===== Logo fixe ===== */
 .logo-fixed {
   position: fixed;
   top: 10px;
