@@ -3,15 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Calendriers des Examens du 2025‑2026</title>
+  <title>Calendriers des Examens du 2025-2026</title>
+
+  <!-- Lien vers ton CSS externe (si tu en as un) -->
+  <link rel="stylesheet" href="styles.css">
 
   <style>
     body {
       font-family: Arial, sans-serif;
-      padding: 15px;
-      background: #f9f9f9;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding-top: 80px; /* espace pour la nav */
       color: #333;
-      margin-top: 60px; /* espace pour laisser place au logo */
+    }
+
+    /* ===== Barre de navigation (menu en haut) ===== */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #007bff;
+      padding: 8px 0;
+      z-index: 1000;
+    }
+    nav a {
+      color: #fff;
+      font-weight: bold;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 17px;
+    }
+    nav a:hover {
+      text-decoration: underline;
     }
 
     /* Logo fixe en haut à gauche */
@@ -19,9 +43,8 @@
       position: fixed;
       top: 10px;
       left: 10px;
-      max-width: 120px; /* taille du logo ajustable */
+      max-width: 120px;
       height: auto;
-      z-index: 1000;
     }
 
     header {
@@ -29,71 +52,131 @@
       margin-bottom: 20px;
     }
 
-    .sous-titre {
-      text-align: right;
-      font-size: 18px;
-      margin-bottom: 25px;
+    /* Titres des sections */
+    .section-title {
+      text-align: left;
+      font-size: 22px;
       font-weight: bold;
+      margin-top: 30px;
+      margin-bottom: 12px;
+      color: #0056b3;
     }
 
+    /* Image de section */
+    .exam-image {
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      margin-bottom: 15px;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    /* Pour aligner liens à gauche */
+    .left-links {
+      text-align: left;
+      margin-left: 15px;
+    }
+
+    /* Style des liens PDF/Excel */
     .pdf-link {
       display: block;
-      margin: 12px 0;
+      margin: 8px 0;
       font-size: 17px;
-      color: #007bff;
       text-decoration: none;
-      padding: 8px;
-      border-radius: 4px;
-      background: #fff;
-      border: 1px solid #ccc;
+      padding: 10px;
+      border-radius: 5px;
+      background-color: #FFDBBB; /* orangé clair pour tous */
+      color: #222;
+      border: 2px solid #E0A26D;
+      max-width: 500px;
     }
-
     .pdf-link:hover {
-      background: #e6f0ff;
-      text-decoration: underline;
-      border-color: #007bff;
+      background-color: #FFB566; /* un peu plus vif au hover */
     }
   </style>
 </head>
+
 <body>
 
-  <!-- Logo en haut à gauche -->
-  <img class="logo-fixed" src="logo_ecole.png" alt="Logo de l’école">
+  <!-- Barre de navigation -->
+  <nav>
+    <a href="#section-calendriers">Examens</a>
+    <a href="#section-surveillances">Surveillances</a>
+    <a href="#section-excel">Excel Départements</a>
+  </nav>
 
-  <!-- En‑tête avec titre centré -->
+  <!-- Logo -->
+  <img class="logo-fixed" src="logo_ecole.png" alt="Logo de l'école">
+
+  <!-- Titre -->
   <header>
-    <h1>Calendriers des Examens du 2025‑2026</h1>
-	<link rel="stylesheet" href="styles.css">
-
+    <h1>Calendriers des Examens du 2025-2026</h1>
   </header>
 
-  <!-- Sous‑titre aligné à droite -->
-  <div class="sous-titre">
-    Première année licence
-  </div>
+  <!-- ===== SECTION 1 : Calendriers des Examens ===== -->
+  <section id="section-calendriers">
+    <div class="section-title">📅 Calendriers des Examens</div>
 
-  <!-- Liens vers différents PDF -->
-  <a class="pdf-link" href="examens_L1.pdf" target="_blank">
-    📄 Ouvrir le calendrier Licence 1 (PDF)
-  </a>
+    <!-- Image (à remplacer par ton image réelle) -->
+    <img class="exam-image" src="image_calendriers.png" alt="Image des calendriers">
 
-  <a class="pdf-link" href="examens_L2.pdf" target="_blank">
-    📄 Ouvrir le calendrier Licence 2 (PDF)
-  </a>
+    <div class="left-links">
+      <a class="pdf-link" href="examens_L1.pdf" target="_blank">
+        📄 Calendrier Licence 1 (PDF)
+      </a>
+      <a class="pdf-link" href="examens_L2.pdf" target="_blank">
+        📄 Calendrier Licence 2 (PDF)
+      </a>
+      <a class="pdf-link" href="examens_complet.pdf" target="_blank">
+        📄 Calendrier complet de l’école (PDF)
+      </a>
+      <a class="pdf-link" href="reglement_examens.pdf" target="_blank">
+        📄 Règlement des examens (PDF)
+      </a>
+    </div>
+  </section>
 
-  <a class="pdf-link" href="examens_complet.pdf" target="_blank">
-    📄 Ouvrir le calendrier complet de l’école (PDF)
-  </a>
+  <!-- ===== SECTION 2 : Documents des Surveillances ===== -->
+  <section id="section-surveillances">
+    <div class="section-title">🗂️ Documents des Surveillances</div>
 
-  <a class="pdf-link" href="reglement_examens.pdf" target="_blank">
-    📄 Règlement des examens (PDF)
-  </a>
-  <h2>📊 Document Excel par département</h2>
+    <div class="left-links">
+      <a class="pdf-link" href="liste_enseignants.pdf" target="_blank">
+        📄 Liste des enseignants (PDF)
+      </a>
+      <!-- Ajoute d’autres documents ici si besoin -->
+    </div>
+  </section>
 
-<a class="pdf-link" href="Dep_SV.xlsx" download>
-  📥 Télécharger Feuille Département SV
-</a>
+  <!-- ===== SECTION 3 : Documents Excel par département ===== -->
+  <section id="section-excel">
+    <div class="section-title">📊 Documents Excel par Département</div>
 
+    <div class="left-links">
+      <a class="pdf-link" href="Dep_SV.xlsx" download>
+        📥 Feuille Département SV
+      </a>
+      <a class="pdf-link" href="Dep_ST.xlsx" download>
+        📥 Feuille Département ST
+      </a>
+      <a class="pdf-link" href="Dep_INFO.xlsx" download>
+        📥 Feuille Département INFO
+      </a>
+      <a class="pdf-link" href="Dep_CH.xlsx" download>
+        📥 Feuille Département CH
+      </a>
+      <a class="pdf-link" href="Dep_PHYS.xlsx" download>
+        📥 Feuille Département PHYS
+      </a>
+      <a class="pdf-link" href="Dep_FT.xlsx" download>
+        📥 Feuille Département FT
+      </a>
+      <a class="pdf-link" href="Dep_MATHS.xlsx" download>
+        📥 Feuille Département MATHS
+      </a>
+    </div>
+  </section>
 
 </body>
 </html>
