@@ -51,16 +51,16 @@ header h1 {
   padding: 14px 20px;
   font-size: 18px;
   font-weight: bold;
-  background-color: #007bff;
-  color: #fff;
+  background-color: #FFDBBB; /* orangé clair */
+  color: #222; /* texte foncé pour contraste */
   text-decoration: none;
   border-radius: 6px;
   text-align: center;
-  border: 2px solid #0056b3;
+  border: 2px solid #E0A26D; /* bordure un peu plus foncée */
   transition: background-color 0.3s, transform 0.2s;
 }
 
 .pdf-link:hover {
-  background-color: #0056b3;
+  background-color: #FFDBBB; /* orangé un peu plus vif au survol */
   transform: scale(1.03);
 }
