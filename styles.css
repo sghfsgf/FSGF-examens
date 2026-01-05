@@ -1,5 +1,5 @@
 body {
-  background-color: #ADD8E6; /* bleu clair */
+  background-color: #87CEFA; /* fond global bleu clair */
   font-family: Arial, sans-serif;
   color: #222;
   margin: 0;
@@ -8,18 +8,14 @@ body {
 
 header {
   text-align: center;
-  background: #ffffff;
+  padding: 20px 0;
+  background-color: #87CEFA; /* bande titre bleu clair */
   border-bottom: 3px solid #007bff;
 }
 
-.pdf-link {
-  background-color: #007bff;
-  color: #fff;
-  padding: 12px;
-  border-radius: 6px;
-  text-decoration: none;
-  display: block;
-  margin: 10px auto;
-  width: 90%;
-  max-width: 450px;
+header h1 {
+  font-size: 28px;
+  color: #007bff;
+  margin: 0;
+  padding: 10px 0;
 }
