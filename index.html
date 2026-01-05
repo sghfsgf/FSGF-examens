@@ -11,22 +11,31 @@
       padding: 15px;
       background: #f9f9f9;
       color: #333;
+      margin-top: 60px; /* espace pour laisser place au logo */
     }
+
+    /* Logo fixe en haut à gauche */
+    .logo-fixed {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      max-width: 120px; /* taille du logo ajustable */
+      height: auto;
+      z-index: 1000;
+    }
+
     header {
       text-align: center;
       margin-bottom: 20px;
     }
-    .logo {
-      max-width: 180px; /* largeur max du logo */
-      height: auto;
-      margin-bottom: 10px;
-    }
+
     .sous-titre {
       text-align: right;
       font-size: 18px;
       margin-bottom: 25px;
       font-weight: bold;
     }
+
     .pdf-link {
       display: block;
       margin: 12px 0;
@@ -38,6 +47,7 @@
       background: #fff;
       border: 1px solid #ccc;
     }
+
     .pdf-link:hover {
       background: #e6f0ff;
       text-decoration: underline;
@@ -47,9 +57,11 @@
 </head>
 <body>
 
-  <!-- En‑tête avec logo et titre -->
+  <!-- Logo en haut à gauche -->
+  <img class="logo-fixed" src="logo_ecole.png" alt="Logo de l’école">
+
+  <!-- En‑tête avec titre centré -->
   <header>
-    <img class="logo" src="logo_ecole.png" alt="Logo de l’école">
     <h1>Calendriers des Examens du 2025‑2026</h1>
   </header>
 
@@ -77,4 +89,3 @@
 
 </body>
 </html>
-
