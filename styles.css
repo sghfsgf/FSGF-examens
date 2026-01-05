@@ -1,27 +1,77 @@
+/* ===== Style global ===== */
 html, body {
   height: 100%;
   margin: 0;
+  font-family: Arial, sans-serif; /* police moderne et lisible */
 }
 
 body {
-  background-color: #A8E6A3; /* vert clair */
+  background-color: #ffffff; /* fond blanc */
+  color: #222222; /* texte sombre par défaut */
 }
 
+/* ===== Header ===== */
 header {
   text-align: center;
   padding: 20px 0;
-  background-color: #A8E6A3; /* vert clair */
-  border-bottom: 3px solid #2E7D32; /* vert foncé */
+  background-color: #ffffff; /* blanc */
+  border-bottom: 3px solid #007bff; /* bleu foncé */
 }
 
 header h1 {
   font-size: 28px;
-  color: #2E7D32; /* vert foncé */
+  color: #007bff; /* texte bleu foncé */
   margin: 0;
   padding: 10px 0;
 }
 
-/* Tous les autres éléments prennent le fond vert */
+/* ===== Sous-titre (optionnel) ===== */
+.sous-titre {
+  text-align: right;
+  font-size: 20px;
+  margin: 10px 20px;
+  font-weight: bold;
+  color: #444444; /* gris foncé */
+}
+
+/* ===== Conteneurs principaux ===== */
 main, section, div {
-  background-color: #A8E6A3;
+  background-color: #ffffff; /* blanc */
+  color: #222222; /* texte sombre */
+  padding: 20px;
+  margin-bottom: 20px; /* espacement entre sections */
+  box-sizing: border-box;
+}
+
+/* ===== Boutons liens vers PDF/Excel ===== */
+.pdf-link {
+  display: block;
+  width: calc(100% - 40px);
+  max-width: 500px;
+  margin: 10px auto;
+  padding: 14px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #FFDBBB; /* orangé clair */
+  color: #222222; /* texte sombre pour contraste */
+  text-decoration: none;
+  border-radius: 6px;
+  text-align: center;
+  border: 2px solid #E0A26D; /* bordure orangé foncé */
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.pdf-link:hover {
+  background-color: #FFC88C; /* orangé plus vif au survol */
+  transform: scale(1.03);
+}
+
+/* ===== Logo fixe en haut à gauche ===== */
+.logo-fixed {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  max-width: 120px;
+  height: auto;
+  z-index: 1000;
 }
