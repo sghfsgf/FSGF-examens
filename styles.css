@@ -5,6 +5,7 @@ html, body {
   font-family: Arial, sans-serif;
   background-color: #ffffff; /* fond blanc */
   color: #222222;
+  padding-top: 50px; /* espace pour la barre de navigation fixe */
 }
 
 /* ===== Barre de navigation ===== */
@@ -14,7 +15,8 @@ nav {
   left: 0;
   width: 100%;
   background-color: #007bff;
-  padding: 4px 0; /* réduit l’espace vertical (au lieu de 8px) */
+  padding: 4px 0;    /* réduit l'espace vertical pour minimiser la barre */
+  height: 40px;      /* hauteur fixe pour correspondre au padding-top */
   z-index: 1000;
 }
 
@@ -23,8 +25,9 @@ nav a {
   font-weight: bold;
   text-decoration: none;
   margin: 0 15px;
-  font-size: 15px; /* légèrement plus petit pour réduire la hauteur */
+  font-size: 15px;   /* texte un peu plus petit pour réduire la hauteur */
 }
+
 nav a:hover {
   text-decoration: underline;
 }
@@ -82,6 +85,7 @@ main, section, div {
   max-width: 500px;
   text-align: left; /* texte aligné à gauche */
 }
+
 .pdf-link:hover {
   background-color: #FFB566; /* hover un peu plus vif */
 }
