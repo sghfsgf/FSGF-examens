@@ -99,7 +99,7 @@ main, section, div {
 
 /* ===== Image responsive ===== */
 .exam-image {
-  width: 100%;        /* l’image prend toute la largeur du conteneur */
+  width: 30%;        /* l’image prend toute la largeur du conteneur */
   max-width: 300px;   /* elle ne dépasse pas 500px de large */
   height: auto;       /* garde les proportions correctes */
   display: block;     /* empêche de laisser un espace blanc autour */
