@@ -47,7 +47,7 @@ header {
 
 header h1 {
   color: #007bff;
-  font-size: 40px;   /* texte plus grand */
+  font-size: 30px;   /* texte plus grand */
   margin: 0;
   line-height: 1.2;  /* espace vertical si le titre fait deux lignes */
   padding: 0;        /* padding inutile avec flex centré */
