@@ -115,3 +115,25 @@ main, section, div {
   height: auto;
   z-index: 1000;
 }
+/* ===== Bouton Déposer une réclamation FIXE ===== */
+.btn-reclamation-fixed {
+  position: fixed;
+  top: 10px;          /* distance depuis le haut */
+  right: 15px;        /* distance depuis la droite */
+  background-color: #ffffff;  /* fond blanc pour se détacher */
+  color: #8B0000;     /* rouge foncé pour le texte */
+  border: 2px solid #8B0000; /* bordure rouge foncé */
+  padding: 10px 18px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 16px;
+  z-index: 2000;      /* au-dessus de tout */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-reclamation-fixed:hover {
+  background-color: #8B0000; /* fond rouge foncé au survol */
+  color: #ffffff;            /* texte blanc au survol */
+}
