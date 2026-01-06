@@ -151,3 +151,40 @@ footer a:hover {
     text-decoration: underline;
 }
 
+/* ===== Responsive pour petits écrans ===== */
+@media screen and (max-width: 768px) {
+  /* Section des liens PDF devient une colonne flexible */
+  .left-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* espace entre les liens */
+    margin-left: 0;
+    padding: 0 15px; /* espace sur les côtés */
+  }
+
+  /* Liens PDF prennent toute la largeur disponible */
+  .pdf-link {
+    width: 100%;
+    max-width: none;
+    text-align: center; /* centré sur mobile */
+    font-size: 18px;
+  }
+
+  /* Réduire un peu la taille des titres de section */
+  .section-title {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  /* Ajuster l’image pour s’adapter */
+  .exam-image {
+    width: 100%;
+    max-width: none;
+  }
+
+  /* Header h1 plus fluide sur mobile */
+  header h1 {
+    font-size: 24px;
+    padding: 0 10px;
+  }
+}
