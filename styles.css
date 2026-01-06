@@ -99,11 +99,11 @@ main, section, div {
 
 /* ===== Image responsive ===== */
 .exam-image {
-  width: 30%;        /* l’image prend toute la largeur du conteneur */
-  max-width: 300px;   /* elle ne dépasse pas 500px de large */
-  height: auto;       /* garde les proportions correctes */
-  display: block;     /* empêche de laisser un espace blanc autour */
-  margin: 0 auto 15px auto; /* centre l’image horizontalement + marge en bas */
+  max-width: 500px;   /* limite maximale */
+  width: 90vw;        /* largeur relative à l’écran (90%) */
+  height: auto;       /* conserve les proportions */
+  display: block;     /* supprime l’espace blanc en dessous */
+  margin: 0 auto 15px auto; /* centre l’image */
 }
 
 /* ===== Logo fixe ===== */
