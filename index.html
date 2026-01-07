@@ -3,101 +3,64 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Calendriers des Examens Session Principale Janvier 2026</title>
+  <title>Calendriers des Examens – Janvier 2026</title>
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
   <!-- ===== Barre de navigation ===== -->
   <nav>
-    <a href="#section-calendriers">Examens</a>
-    <a href="#section-surveillances">Surveillances</a>
-    <a href="#section-excel">Excel Départements</a>
+    <a href="index.html">Examens</a>
+    <a href="documents.html">Documents</a>
+    <a href="reclamations.html">Réclamations</a>
   </nav>
 
-  <!-- ===== Logo fixe ===== -->
+  <!-- ===== Logo ===== -->
   <img class="logo-fixed" src="logo_ecole.png" alt="Logo de l'école">
 
-  <!-- ===== BOUTON Déposer une réclamation FIXE en haut à droite ===== -->
-  <a href="reclamations.html" class="btn-reclamation-fixed">📩 Déposer une réclamation</a>
+  <!-- ===== Bouton Réclamation ===== -->
+  <a href="reclamations.html" class="btn-reclamation-fixed">
+    📩 Déposer une réclamation
+  </a>
 
   <!-- ===== Header ===== -->
   <header>
-    <h1>Calendriers des Examens Session Principale Janvier 2026</h1>
-		
+    <h1>
+      Calendriers des Examens<br>
+      Session Principale Janvier 2026
+    </h1>
   </header>
-  <div id="scheduledText"></div>
 
+  <div id="scheduledText"></div>
   <script src="date-schedule.js"></script>
 
-  <!-- ===== SECTION 1 : Calendriers des Examens ===== -->
-  <section id="section-calendriers">
-    <div class="section-title">📅 Calendriers des Examens : période 05/01/2026 - 10/01/2026</div>
-
-    <!-- <img class="exam-image" src="image_calendriers.png" alt="Image des calendriers"> -->
-
-   <div class="left-links">
-  <a class="pdf-link" href="examens_L1.pdf" target="_blank">
-    📄 Première Année Licence (PDF)
-  </a>
-
-  <a class="pdf-link" href="examens_L2.pdf" target="_blank">
-    📄 Deuxième Année Licence (PDF)
-  </a>
-
-  <a class="pdf-link" href="examens_L3.pdf" target="_blank">
-    📄 Troisième Année Licence (PDF)
-  </a>
-
-  <a class="pdf-link" href="examens_masters.pdf" target="_blank">
-    📄 Mastères (PDF)
-  </a>
-
-  <a class="pdf-link" href="examens_complet.pdf" target="_blank">
-    📄 Calendrier complet du FSGF (PDF)
-  </a>
-
-  <a class="pdf-link" href="reglement_examens.pdf" target="_blank">
-    📄 Règlement des examens (PDF)
-  </a>
-</div>
-
-  </section>
-
-  <!-- ===== SECTION 2 : Documents des Surveillances ===== -->
-  <section id="section-surveillances">
-    <div class="section-title">🗂️ Documents des Surveillances</div>
+  <!-- ===== SECTION : Calendriers ===== -->
+  <section>
+    <div class="section-title">
+      📅 Calendriers des Examens : période 05/01/2026 - 10/01/2026
+    </div>
 
     <div class="left-links">
-      <a class="pdf-link" href="liste_enseignants.pdf" target="_blank">📄 Liste des enseignants (PDF)</a>
+      <a class="pdf-link" href="examens_L1.pdf" target="_blank">📄 Licence 1</a>
+      <a class="pdf-link" href="examens_L2.pdf" target="_blank">📄 Licence 2</a>
+      <a class="pdf-link" href="examens_L3.pdf" target="_blank">📄 Licence 3</a>
+      <a class="pdf-link" href="examens_masters.pdf" target="_blank">📄 Mastères</a>
+      <a class="pdf-link" href="examens_complet.pdf" target="_blank">📄 Calendrier complet FSGF</a>
+      <a class="pdf-link" href="reglement_examens.pdf" target="_blank">📄 Règlement des examens</a>
     </div>
   </section>
 
-  <!-- ===== SECTION 3 : Documents Excel par département ===== -->
-  <section id="section-excel">
-    <div class="section-title">📊 Documents Excel par Département</div>
-
-    <div class="left-links">
-      <a class="pdf-link" href="Dep_SV.xlsx" download>📥 Feuille Département SV</a>
-      <a class="pdf-link" href="Dep_ST.xlsx" download>📥 Feuille Département ST</a>
-      <a class="pdf-link" href="Dep_INFO.xlsx" download>📥 Feuille Département INFO</a>
-      <a class="pdf-link" href="Dep_CH.xlsx" download>📥 Feuille Département CH</a>
-      <a class="pdf-link" href="Dep_PHYS.xlsx" download>📥 Feuille Département PHYS</a>
-      <a class="pdf-link" href="Dep_FT.xlsx" download>📥 Feuille Département FT</a>
-      <a class="pdf-link" href="Dep_MATHS.xlsx" download>📥 Feuille Département MATHS</a>
-    </div>
-  </section>
-
+  <!-- ===== Footer ===== -->
   <footer>
-  <div class="footer-content">
-    <p>
-      Site officiel :
-      <a href="https://fsgf.rnu.tn/" target="_blank">https://fsgf.rnu.tn/</a>
-    </p>
-    <p>© 2026 PlanificationExamen</p>
-  </div>
-</footer>
-
+    <div class="footer-content">
+      <p>
+        Site officiel :
+        <a href="https://fsgf.rnu.tn/" target="_blank">https://fsgf.rnu.tn/</a>
+      </p>
+      <p>© 2026 PlanificationExamen</p>
+    </div>
+  </footer>
 
 </body>
 </html>
