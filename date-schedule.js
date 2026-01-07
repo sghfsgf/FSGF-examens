@@ -11,7 +11,7 @@ function showScheduledText() {
 
   // Vérifie si now est entre startDate et endDate
   if (now >= startDate && now <= endDate) {
-    el.textContent = "Déroulement des Examens de la Session Principale Janvier 2026";  // texte affiché dans l’intervalle
+    el.textContent = "Déroulement des Examens de la Session Principale Janvier 2026: 05 janvier 2026|10 janvier 2026";  // texte affiché dans l’intervalle
   } else {
     el.textContent = "";  // rien en dehors de l’intervalle
   }
