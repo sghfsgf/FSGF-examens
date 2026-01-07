@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Déposer une réclamation — G-PlanEx</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="manifest" href="manifest.json">
 </head>
 <body>
 
@@ -31,6 +32,13 @@
     <p>© 2026 PlanificationExamen</p>
     <p>Site officiel : <a href="https://fsgf.rnu.tn/" target="_blank">https://fsgf.rnu.tn/</a></p>
   </footer>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js')
+      .then(reg => console.log('Service Worker enregistré:', reg))
+      .catch(err => console.log('Erreur Service Worker:', err));
+  }
+</script>
 
 </body>
 </html>
