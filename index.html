@@ -60,7 +60,45 @@
     Si vous avez des problèmes d’affichage, utilisez le bouton ci-dessus pour ouvrir le formulaire dans un nouvel onglet.
   </p>
 </section>
+<div id="scheduledText"></div>
+  <script src="date-schedule.js"></script>
 
+  <!-- ===== SECTION : Calendriers ===== -->
+  <section>
+    <div class="section-title">
+      📅 Calendriers des Examens : période 05/01/2026 - 10/01/2026
+    </div>
+
+    <div class="left-links">
+      <a class="pdf-link" href="examens_L1.pdf" target="_blank">📄 Licence 1</a>
+      <a class="pdf-link" href="examens_L2.pdf" target="_blank">📄 Licence 2</a>
+      <a class="pdf-link" href="examens_L3.pdf" target="_blank">📄 Licence 3</a>
+      <a class="pdf-link" href="examens_masters.pdf" target="_blank">📄 Mastères</a>
+      <a class="pdf-link" href="examens_complet.pdf" target="_blank">📄 Calendrier complet FSGF</a>
+      <a class="pdf-link" href="reglement_examens.pdf" target="_blank">📄 Règlement des examens</a>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    <div class="footer-content">
+      <p>
+        Site officiel :
+        <a href="https://fsgf.rnu.tn/" target="_blank">https://fsgf.rnu.tn/</a>
+      </p>
+      <p>© 2026 PlanificationExamen</p>
+    </div>
+  </footer>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js')
+      .then(reg => console.log('Service Worker enregistré:', reg))
+      .catch(err => console.log('Erreur Service Worker:', err));
+  }
+</script>
+
+</body>
+</html>
 
   <!-- ===== Script unique pour Apps Script ===== -->
   <script>
@@ -100,6 +138,7 @@
 
 </body>
 </html>
+
 
 
 
