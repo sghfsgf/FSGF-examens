@@ -38,28 +38,21 @@
   </header>
 
   <!-- ===== Section Formulaire ===== -->
-  <section id="choix-enseignant" class="form-section">
-    <h2>Choix du jour de surveillance</h2>
-    <p>
-      Remplissez le formulaire officiel ci-dessous pour enregistrer votre choix dans la feuille de suivi.
-    </p>
+ <section id="choix-enseignant" style="max-width:600px; margin:35px auto; padding:20px; border:1px solid #ccc; border-radius:10px; box-shadow:0 2px 6px rgba(0,0,0,0.1); background-color:#f9f9f9;">
+  <h2 style="text-align:center; color:#333; margin-bottom:20px;">Choix du jour de surveillance</h2>
+  <p style="text-align:center; color:#555; margin-bottom:20px;">
+    Remplissez le formulaire officiel ci-dessous pour enregistrer votre choix dans la feuille de suivi.
+  </p>
 
-   <div class="form-link">
-  <a href="https://script.google.com/macros/s/AKfycbzpJUqb65f1JdhEINAK08zbLAYtv9NpSE0lm30CkXydI-CF7lX_gqNVE8mnN4Nmo2lD/exec" target="_blank">
-    Ouvrir le formulaire dans un nouvel onglet
-  </a>
-</div>
+  <!-- iframe responsive -->
+  <div class="iframe-container" style="position:relative; padding-bottom:80%; height:0; overflow:hidden; border:1px solid #ccc; border-radius:10px;">
+    <iframe src="https://script.google.com/macros/s/AKfycbzpJUqb65f1JdhEINAK08zbLAYtv9NpSE0lm30CkXydI-CF7lX_gqNVE8mnN4Nmo2lD/exec"
+            style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;"
+            scrolling="yes">
+    </iframe>
+  </div>
+</section>
 
-
-    <!-- iframe responsive -->
-    <div class="iframe-container">
-      <iframe src="https://script.google.com/macros/s/AKfycbzpJUqb65f1JdhEINAK08zbLAYtv9NpSE0lm30CkXydI-CF7lX_gqNVE8mnN4Nmo2lD/exec" scrolling="yes"></iframe>
-    </div>
-
-    <p class="form-note">
-      Si vous avez des problèmes d’affichage, utilisez le bouton ci-dessus pour ouvrir le formulaire dans un nouvel onglet.
-    </p>
-  </section>
 
   <!-- ===== Calendriers ===== -->
   <section class="calendriers">
@@ -100,5 +93,6 @@
 
 </body>
 </html>
+
 
 
