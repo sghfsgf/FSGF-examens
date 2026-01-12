@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <!-- ✅ OBLIGATOIRE POUR MOBILE -->
+  <!-- ✅ Obligatoire pour mobile -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Calendriers des Examens – Janvier 2026</title>
   <link rel="stylesheet" href="styles.css">
@@ -34,42 +34,43 @@
     </h1>
   </header>
 
-<section id="choix-enseignant" style="max-width:600px; margin:35px auto; padding:20px; border:1px solid #ccc; border-radius:10px; box-shadow:0 2px 6px rgba(0,0,0,0.1); background-color:#f9f9f9;">
-  <h2 style="text-align:center; color:#333; margin-bottom:20px;">Choix du jour de surveillance</h2>
-  <p style="text-align:center; color:#555; margin-bottom:20px;">
-    Remplissez le formulaire officiel ci-dessous pour enregistrer votre choix dans la feuille de suivi.
-  </p>
+  <!-- ===== Section : Choix du jour de surveillance ===== -->
+  <section id="choix-enseignant" style="max-width:700px; margin:40px auto; padding:25px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); background-color:#fdfdfd; font-family:Arial, sans-serif;">
+    
+    <h2 style="text-align:center; color:#222; margin-bottom:20px; font-size:1.8em;">Choix du jour de surveillance</h2>
+    
+    <p style="text-align:center; color:#555; font-size:1em; margin-bottom:25px;">
+      Veuillez remplir le formulaire officiel pour enregistrer votre choix. Vous pouvez ouvrir le formulaire dans un nouvel onglet ou le remplir directement ci-dessous.
+    </p>
 
-  <!-- Lien direct si ouverture dans un nouvel onglet -->
-  <div style="text-align:center; margin-bottom:15px;">
-    <a href="https://script.google.com/macros/s/AKfycbzpJUqb65f1JdhEINAK08zbLAYtv9NpSE0lm30CkXydI-CF7lX_gqNVE8mnN4Nmo2lD/exec" target="_blankc"
-       style="display:inline-block; padding:10px 25px; background-color:#007BFF; color:white; text-decoration:none; border-radius:5px; font-weight:bold;">
-      Ouvrir le formulaire dans un nouvel onglet
-    </a>
-  </div>
+    <!-- Bouton principal -->
+    <div style="text-align:center; margin-bottom:20px;">
+      <a href="https://script.google.com/macros/s/AKfycbzpJUqb65f1JdhEINAK08zbLAYtv9NpSE0lm30CkXydI-CF7lX_gqNVE8mnN4Nmo2lD/exec" target="_blank"
+         style="display:inline-block; padding:12px 28px; background-color:#007BFF; color:white; text-decoration:none; font-weight:bold; border-radius:8px; transition:0.3s;">
+         Ouvrir le formulaire dans un nouvel onglet
+      </a>
+    </div>
 
-  <!-- iframe responsive -->
-  <div style="position:relative; padding-bottom:80%; height:0; overflow:hidden; border:1px solid #ccc; border-radius:10px;">
-    <iframe src="https://script.google.com/macros/s/TON_ID/exec"
-            style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;"
-            scrolling="yes">
-    </iframe>
-  </div>
+    <!-- Iframe responsive -->
+    <div style="position:relative; padding-bottom:80%; height:0; overflow:hidden; border-radius:12px; border:1px solid #ccc;">
+      <iframe src="https://script.google.com/macros/s/AKfycbzpJUqb65f1JdhEINAK08zbLAYtv9NpSE0lm30CkXydI-CF7lX_gqNVE8mnN4Nmo2lD/exec"
+              style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;"
+              scrolling="yes">
+      </iframe>
+    </div>
 
-  <p style="margin-top:15px; text-align:center; font-size:0.9em; color:#777;">
-    Si vous avez des problèmes d’affichage, utilisez le bouton ci-dessus pour ouvrir le formulaire dans un nouvel onglet.
-  </p>
-</section>
-<div id="scheduledText"></div>
-  <script src="date-schedule.js"></script>
+    <p style="text-align:center; font-size:0.9em; color:#777; margin-top:15px;">
+      Si l’iframe ne s’affiche pas correctement, utilisez le bouton ci-dessus pour ouvrir le formulaire dans un nouvel onglet.
+    </p>
+  </section>
 
-  <!-- ===== SECTION : Calendriers ===== -->
-  <section>
-    <div class="section-title">
+  <!-- ===== Section : Calendriers PDF ===== -->
+  <section style="max-width:700px; margin:50px auto; padding:0 15px;">
+    <div class="section-title" style="font-size:1.2em; font-weight:bold; margin-bottom:15px;">
       📅 Calendriers des Examens : période 05/01/2026 - 10/01/2026
     </div>
 
-    <div class="left-links">
+    <div class="left-links" style="display:flex; flex-wrap:wrap; gap:10px;">
       <a class="pdf-link" href="examens_L1.pdf" target="_blank">📄 Licence 1</a>
       <a class="pdf-link" href="examens_L2.pdf" target="_blank">📄 Licence 2</a>
       <a class="pdf-link" href="examens_L3.pdf" target="_blank">📄 Licence 3</a>
@@ -80,68 +81,22 @@
   </section>
 
   <!-- ===== Footer ===== -->
-  <footer>
-    <div class="footer-content">
-      <p>
-        Site officiel :
-        <a href="https://fsgf.rnu.tn/" target="_blank">https://fsgf.rnu.tn/</a>
-      </p>
-      <p>© 2026 PlanificationExamen</p>
-    </div>
+  <footer style="text-align:center; margin-top:50px; padding:20px; background-color:#f2f2f2; font-size:0.9em; color:#555;">
+    <p>
+      Site officiel :
+      <a href="https://fsgf.rnu.tn/" target="_blank">https://fsgf.rnu.tn/</a>
+    </p>
+    <p>© 2026 PlanificationExamen</p>
   </footer>
-<script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('service-worker.js')
-      .then(reg => console.log('Service Worker enregistré:', reg))
-      .catch(err => console.log('Erreur Service Worker:', err));
-  }
-</script>
 
-</body>
-</html>
-
-  <!-- ===== Script unique pour Apps Script ===== -->
+  <!-- ===== Service Worker ===== -->
   <script>
-    document.getElementById("choixForm").addEventListener("submit", async function(e){
-      e.preventDefault();
-
-      const data = {
-        nomPrenom: document.getElementById("enseignant").value,
-        departement: document.getElementById("dept").value,
-        jour: document.getElementById("jour").value,
-        email: document.getElementById("email").value
-      };
-
-      try {
-        const res = await fetch("https://script.google.com/macros/s/AKfycbzpJUqb65f1JdhEINAK08zbLAYtv9NpSE0lm30CkXydI-CF7lX_gqNVE8mnN4Nmo2lD/exec" target="_blankc", {
-          method: "POST",
-          body: JSON.stringify(data),
-          headers: {"Content-Type":"application/json"}
-        });
-
-        const result = await res.json();
-
-        // Afficher le message renvoyé par Apps Script
-        alert(result.message);
-
-        // Vider le formulaire après envoi ou refus
-        if(result.status === "ok" || result.status === "no" || result.status === "full"){
-          e.target.reset();
-        }
-
-      } catch(err){
-        console.error(err);
-        alert("Erreur de connexion, réessayez plus tard.");
-      }
-    });
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(reg => console.log('Service Worker enregistré:', reg))
+        .catch(err => console.log('Erreur Service Worker:', err));
+    }
   </script>
 
 </body>
 </html>
-
-
-
-
-
-
-
