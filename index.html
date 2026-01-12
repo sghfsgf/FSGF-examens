@@ -34,11 +34,12 @@
       Session Principale Janvier 2026
     </h1>
     </header>
-    <!-- Début du formulaire choix enseignant -->
-<section id="choix-enseignant" style="max-width:500px; margin:35px auto; padding:20px; border:1px solid #ccc; border-radius:8px;">
+   
+  <section id="choix-enseignant" style="max-width:500px; margin:35px auto; padding:20px; border:1px solid #ccc; border-radius:8px;">
   <h2>Choix du jour de surveillance</h2>
 
   <form id="choixForm">
+    <!-- Nom et prénom en arabe -->
     <label for="enseignant">Nom et prénom</label>
     <small style="display:block; color:#555; margin-bottom:6px;">
       يرجى تعمير الاسم واللقب باللغة العربية، وشكرًا
@@ -51,6 +52,15 @@
            required
            style="width:100%; margin-bottom:15px; padding:6px; text-align:right;">
 
+    <!-- Email -->
+    <label for="email">Email :</label>
+    <input type="email"
+           id="email"
+           placeholder="exemple@fsgf.tn"
+           required
+           style="width:100%; margin-bottom:15px; padding:6px;">
+
+    <!-- Département -->
     <label for="dept">Département :</label>
     <select id="dept" required style="width:100%; margin-bottom:15px; padding:6px;">
       <option value="">Choisir département</option>
@@ -64,6 +74,7 @@
       <option value="LANGUES">LANGUES</option>
     </select>
 
+    <!-- Jour -->
     <label for="jour">Jour :</label>
     <select id="jour" name="jour" required style="width:100%; margin-bottom:15px; padding:6px;">
       <option value="">Choisir jour</option>
@@ -77,10 +88,43 @@
 
     <button type="submit" style="width:100%; padding:10px; font-size:16px;">Valider</button>
   </form>
-
-  <div id="message" style="text-align:center; margin-top:15px; font-weight:bold;"></div>
 </section>
-<!-- Fin du formulaire choix enseignant -->
+
+<!-- Script JavaScript pour envoyer vers Apps Script -->
+<script>
+document.getElementById("choixForm").addEventListener("submit", async function(e){
+  e.preventDefault();
+
+  const data = {
+    nomPrenom: document.getElementById("enseignant").value,
+    departement: document.getElementById("dept").value,
+    jour: document.getElementById("jour").value,
+    email: document.getElementById("email").value
+  };
+
+  try {
+    const res = await fetch("URL_DE_TON_APPS_SCRIPT", {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {"Content-Type":"application/json"}
+    });
+
+    const result = await res.json();
+
+    // Afficher le message renvoyé par Apps Script
+    alert(result.message);
+
+    // Vider le formulaire après envoi ou refus
+    if(result.status === "ok" || result.status === "no" || result.status === "full"){
+      e.target.reset();
+    }
+
+  } catch(err){
+    console.error(err);
+    alert("Erreur de connexion, réessayez plus tard.");
+  }
+});
+</script>
 
   
 
@@ -120,33 +164,44 @@
       .catch(err => console.log('Erreur Service Worker:', err));
   }
 </script>
-  <script>
-document.getElementById("choixForm").addEventListener("submit", function(e) {
+ <script>
+document.getElementById("choixForm").addEventListener("submit", async function(e){
   e.preventDefault();
 
-  const enseignant = document.getElementById("enseignant").value.trim();
-  const dept = document.getElementById("dept").value;
-  const jour = document.getElementById("jour").value;
+  const data = {
+    nomPrenom: document.getElementById("enseignant").value,
+    departement: document.getElementById("dept").value,
+    jour: document.getElementById("jour").value,
+    email: document.getElementById("email").value
+  };
 
-  fetch("URL_DE_TON_APPS_SCRIPT", {
-    method: "POST",
-    body: new URLSearchParams({
-      enseignant: enseignant,
-      departement: dept,
-      jour: jour
-    })
-  })
-  .then(res => res.text())
-  .then(msg => {
-    const m = document.getElementById("message");
-    m.innerHTML = msg;
-    m.style.color = msg.startsWith("✅") ? "green" : "red";
-  });
+  try {
+    const res = await fetch("URL_DE_TON_APPS_SCRIPT", {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {"Content-Type":"application/json"}
+    });
+
+    const result = await res.json();
+
+    // Afficher le message renvoyé par Apps Script
+    alert(result.message);
+
+    // Vider le formulaire après envoi ou refus
+    if(result.status === "ok" || result.status === "no" || result.status === "full"){
+      e.target.reset();
+    }
+
+  } catch(err){
+    console.error(err);
+    alert("Erreur de connexion, réessayez plus tard.");
+  }
 });
 </script>
 
 
 </body>
 </html>
+
 
 
