@@ -15,8 +15,8 @@ nav {
   left: 0;
   width: 100%;
   background-color: #007bff;
-  padding: 4px 0;    /* réduit l'espace vertical pour minimiser la barre */
-  height: 40px;      /* hauteur fixe pour correspondre au padding-top */
+  padding: 4px 0;
+  height: 40px;
   z-index: 1000;
 }
 
@@ -25,7 +25,7 @@ nav a {
   font-weight: bold;
   text-decoration: none;
   margin: 0 15px;
-  font-size: 15px;   /* texte un peu plus petit pour réduire la hauteur */
+  font-size: 15px;
 }
 
 nav a:hover {
@@ -36,22 +36,19 @@ nav a:hover {
 header {
   background-color: #ffffff;
   border-bottom: 3px solid #007bff;
-
-  min-height: 150px;          /* hauteur minimum du header */
-  display: flex;              /* active flexbox pour centrer le contenu */
-  justify-content: center;    /* centre horizontalement le titre */
-  align-items: center;        /* centre verticalement le titre */
+  min-height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  margin-bottom: 30px;        /* espace sous le header */
+  margin-bottom: 30px;
 }
 
 header h1 {
   color: #007bff;
-  font-size: 30px;   /* texte plus grand */
+  font-size: 30px;
   margin: 0;
-  line-height: 1.2;  /* espace vertical si le titre fait deux lignes */
-  padding: 0;        /* padding inutile avec flex centré */
-  text-align: center;
+  line-height: 1.2;
 }
 
 /* ===== Conteneurs ===== */
@@ -79,31 +76,30 @@ main, section, div {
   text-decoration: none;
   padding: 10px;
   border-radius: 5px;
-  background-color: #FFDBBB; /* orangé clair */
+  background-color: #FFDBBB;
   color: #222;
   border: 2px solid #E0A26D;
   max-width: 500px;
-  text-align: left; /* texte aligné à gauche */
+  text-align: left;
 }
 
 .pdf-link:hover {
-  background-color: #FFB566; /* hover un peu plus vif */
+  background-color: #FFB566;
 }
 
-/* ===== Pour aligner les liens à gauche ===== */
+/* ===== Alignement des liens à gauche ===== */
 .left-links {
   text-align: left;
   margin-left: 15px;
 }
 
-
 /* ===== Image responsive ===== */
 .exam-image {
-  max-width: 500px;   /* limite maximale */
-  width: 90vw;        /* largeur relative à l’écran (90%) */
-  height: auto;       /* conserve les proportions */
-  display: block;     /* supprime l’espace blanc en dessous */
-  margin: 0 auto 15px auto; /* centre l’image */
+  max-width: 500px;
+  width: 90vw;
+  height: auto;
+  display: block;
+  margin: 0 auto 15px auto;
 }
 
 /* ===== Logo fixe ===== */
@@ -115,84 +111,81 @@ main, section, div {
   height: auto;
   z-index: 1000;
 }
+
 /* ===== Bouton Déposer une réclamation FIXE ===== */
 .btn-reclamation-fixed {
   position: fixed;
-  top: 10px;          /* distance depuis le haut */
-  right: 15px;        /* distance depuis la droite */
-  background-color: #ffffff;  /* fond blanc pour se détacher */
-  color: #8B0000;     /* rouge foncé pour le texte */
-  border: 2px solid #8B0000; /* bordure rouge foncé */
+  top: 10px;
+  right: 15px;
+  background-color: #ffffff;
+  color: #8B0000;
+  border: 2px solid #8B0000;
   padding: 10px 18px;
   border-radius: 5px;
   font-weight: bold;
   text-decoration: none;
   font-size: 16px;
-  z-index: 2000;      /* au-dessus de tout */
+  z-index: 2000;
   box-shadow: 0 2px 6px rgba(0,0,0,0.2);
   transition: background-color 0.3s, color 0.3s;
 }
 
 .btn-reclamation-fixed:hover {
-  background-color: #8B0000; /* fond rouge foncé au survol */
-  color: #ffffff;            /* texte blanc au survol */
-}
-footer {
-    text-align: center;
-    font-size: 14px;
-    color: #555;
-    margin-top: 30px;
-}
-footer a {
-    color: #0052cc;
-    text-decoration: none;
-}
-footer a:hover {
-    text-decoration: underline;
+  background-color: #8B0000;
+  color: #ffffff;
 }
 
-/* ===== Responsive pour petits écrans ===== */
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  font-size: 14px;
+  color: #555;
+  margin-top: 30px;
+}
+
+footer a {
+  color: #0052cc;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Responsive petits écrans ===== */
 @media screen and (max-width: 768px) {
-  /* Section des liens PDF devient une colonne flexible */
   .left-links {
     display: flex;
     flex-direction: column;
-    gap: 12px; /* espace entre les liens */
+    gap: 12px;
     margin-left: 0;
-    padding: 0 15px; /* espace sur les côtés */
+    padding: 0 15px;
   }
 
-  /* Liens PDF prennent toute la largeur disponible */
   .pdf-link {
     width: 100%;
     max-width: none;
-    text-align: center; /* centré sur mobile */
+    text-align: center;
     font-size: 18px;
   }
 
-  /* Réduire un peu la taille des titres de section */
   .section-title {
     font-size: 20px;
     text-align: center;
   }
 
-  /* Ajuster l’image pour s’adapter */
   .exam-image {
     width: 100%;
     max-width: none;
   }
 
-  /* Header h1 plus fluide sur mobile */
   header h1 {
     font-size: 24px;
     padding: 0 10px;
   }
 }
 
-/* ==============================
-   Styles pour le formulaire de réclamation
-   ============================== */
-
+/* ===== Formulaire de réclamation ===== */
 form#reclamationForm {
   max-width: 600px;
   margin: 30px auto;
@@ -246,17 +239,7 @@ form button:hover {
   background-color: #0056b3;
 }
 
-@media (max-width: 600px) {
-  form input[type="text"],
-  form input[type="email"],
-  form select,
-  form textarea,
-  form button {
-    font-size: 16px;
-    padding: 12px;
-  }
-}
-/* ===== Bouton Formulaire ===== */
+/* ===== Bouton bleu Formulaire Remplir les surveillances ===== */
 .form-link {
   text-align: center;
   margin-bottom: 20px;
@@ -285,11 +268,17 @@ form button:hover {
   transform: translateY(0);
   box-shadow: 0 3px 6px rgba(0,0,0,0.1);
 }
-/* Bouton Retour */
-.btn-return {
+
+/* ===== Bouton Page d'accueil vert ===== */
+.home-link {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.home-link a {
   display: inline-block;
   padding: 12px 28px;
-  background: #28a745; /* vert */
+  background-color: #28a745;
   color: #fff;
   font-weight: bold;
   font-size: 1rem;
@@ -299,80 +288,13 @@ form button:hover {
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-.btn-return:hover {
-  background: #218838;
+.home-link a:hover {
+  background-color: #218838;
   transform: translateY(-2px);
   box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
 
-.btn-return:active {
+.home-link a:active {
   transform: translateY(0);
   box-shadow: 0 3px 6px rgba(0,0,0,0.1);
 }
-
-/* ===== Bouton Page d'accueil ===== */
-.home-link {
-  text-align: center;
-  margin-top: 15px;
-}
-
-.home-link a {
-  display: inline-block;
-  padding: 10px 25px;
-  background-color: #28a745;
-  color: white;
-  font-weight: bold;
-  text-decoration: none;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-}
-
-.home-link a:hover {
-  background-color: #218838;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-.form-link-btn {
-  display: inline-block;
-  padding: 12px 28px;
-  background: linear-gradient(135deg, #007BFF, #0056b3);
-  color: #fff;
-  font-weight: bold;
-  font-size: 1rem;
-  text-decoration: none;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  text-align: center;
-}
-
-.form-link-btn:hover {
-  background: linear-gradient(135deg, #0056b3, #003f7f);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-}
-.home-link {
-  text-align: center;
-  margin-top: 15px;
-}
-
-.home-link a {
-  display: inline-block;
-  padding: 10px 25px;
-  background-color: #28a745;
-  color: white;
-  font-weight: bold;
-  text-decoration: none;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-}
-
-.home-link a:hover {
-  background-color: #218838;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-
-
-
-
