@@ -310,4 +310,27 @@ form button:hover {
   box-shadow: 0 3px 6px rgba(0,0,0,0.1);
 }
 
+/* ===== Bouton Page d'accueil ===== */
+.home-link {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.home-link a {
+  display: inline-block;
+  padding: 10px 25px;
+  background-color: #28a745;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.home-link a:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
 
