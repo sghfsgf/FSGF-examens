@@ -103,7 +103,7 @@ document.getElementById("choixForm").addEventListener("submit", async function(e
   };
 
   try {
-    const res = await fetch("URL_DE_TON_APPS_SCRIPT", {
+    const res = await fetch("https://script.google.com/macros/s/AKfycbynu89BVp3dBSvu486EBuiv7lUBLUkZHrOQuujkmyI/dev", {
       method: "POST",
       body: JSON.stringify(data),
       headers: {"Content-Type":"application/json"}
@@ -202,6 +202,7 @@ document.getElementById("choixForm").addEventListener("submit", async function(e
 
 </body>
 </html>
+
 
 
 
