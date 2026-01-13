@@ -89,40 +89,23 @@
       margin: 0;
     }
 
-    /* ===== Section Formulaire ===== */
-    .form-section {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 20px;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
+<!-- ===== Section Formulaire ===== -->
+<section id="choix-enseignant" class="form-section">
+  <h2>Choix du jour de surveillance</h2>
+  <p>
+    Cliquez sur le bouton ci-dessous pour remplir le formulaire officiel et enregistrer votre choix dans la feuille de suivi.
+  </p>
 
-    .form-section h2 {
-      text-align: center;
-      color: #333;
-      margin-bottom: 10px;
-    }
+  <!-- Bouton pour ouvrir le formulaire Apps Script dans un nouvel onglet -->
+  <div class="form-link">
+    <a href="https://script.google.com/macros/s/AKfycbygYuwwGai8OJe0QGIFCRsXEz_8vtCnjaUhJJ9kDube0GgowmjRtsSZFy7dj0jHTDAs/exec" 
+       target="_blank" 
+       class="form-link-btn">
+      Remplir les jours de Surveillances
+    </a>
+  </div>
+</section>
 
-    .form-section p {
-      text-align: center;
-      color: #555;
-      margin-bottom: 20px;
-    }
-
-    .form-container {
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-
-    .form-container iframe {
-      width: 100%;
-      height: 800px;
-      border: none;
-    }
 
     /* ===== Calendriers ===== */
     .calendriers {
@@ -222,7 +205,7 @@
     <!-- Intégration du formulaire via iframe -->
     <div class="form-container">
       <iframe 
-        src="https://script.google.com/macros/s/AKfycbz_O78KER-2pi6xZqZkDaTqTGh_UIcU5ZmLZ8K-3LSboDkYXBA9y9bfxaYxx-ls_AU4/exec" 
+        src="https://script.google.com/macros/s/AKfycbygYuwwGai8OJe0QGIFCRsXEz_8vtCnjaUhJJ9kDube0GgowmjRtsSZFy7dj0jHTDAs/exec" 
         width="100%" 
         height="800" 
         style="border:none;">
@@ -257,3 +240,4 @@
 
 </body>
 </html>
+
