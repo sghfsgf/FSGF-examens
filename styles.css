@@ -194,3 +194,25 @@ footer a {
     text-align: center; /* bouton centrée sur mobile */
   }
 }
+/* ===== Bouton Quitter en haut à droite ===== */
+.btn-quitter-fixed {
+  position: fixed;
+  top: 12px;      /* hauteur depuis le haut */
+  right: 20px;    /* distance depuis le bord droit */
+  background-color: #dc3545; /* rouge */
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+  z-index: 2000;  /* au-dessus de tout */
+}
+
+.btn-quitter-fixed:hover {
+  background-color: #a71d2a;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
