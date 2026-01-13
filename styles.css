@@ -3,9 +3,10 @@ html, body {
   height: 100%;
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #ffffff; /* fond blanc */
+  background-color: #ffffff;
   color: #222222;
   padding-top: 50px; /* espace pour la barre de navigation fixe */
+  box-sizing: border-box;
 }
 
 /* ===== Barre de navigation ===== */
@@ -297,4 +298,17 @@ form button:hover {
 .home-link a:active {
   transform: translateY(0);
   box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+/* ===== Bouton formulaire en full-width sur mobile ===== */
+@media screen and (max-width: 768px) {
+  .form-link a {
+    width: 100%;
+    padding: 12px 0;
+  }
+
+  .home-link a {
+    width: 100%;
+    padding: 12px 0;
+  }
 }
