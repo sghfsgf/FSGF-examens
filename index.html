@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Calendriers des Examens – Janvier 2026</title>
 
-  <!-- Lien CSS externe -->
+  <!-- Lien vers CSS externe -->
   <link rel="stylesheet" href="styles.css">
 
   <style>
@@ -89,23 +89,53 @@
       margin: 0;
     }
 
-<!-- ===== Section Formulaire ===== -->
-<section id="choix-enseignant" class="form-section">
-  <h2>Choix du jour de surveillance</h2>
-  <p>
-    Cliquez sur le bouton ci-dessous pour remplir le formulaire officiel et enregistrer votre choix dans la feuille de suivi.
-  </p>
+    /* ===== Section Formulaire avec bouton ===== */
+    .form-section {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
+    }
 
-  <!-- Bouton pour ouvrir le formulaire Apps Script dans un nouvel onglet -->
-  <div class="form-link">
-    <a href="https://script.google.com/macros/s/AKfycbygYuwwGai8OJe0QGIFCRsXEz_8vtCnjaUhJJ9kDube0GgowmjRtsSZFy7dj0jHTDAs/exec" 
-       target="_blank" 
-       class="form-link-btn">
-      Remplir les jours de Surveillances
-    </a>
-  </div>
-</section>
+    .form-section h2 {
+      color: #333;
+      margin-bottom: 10px;
+    }
 
+    .form-section p {
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .form-link {
+      margin-top: 10px;
+    }
+
+    .form-link a {
+      display: inline-block;
+      padding: 14px 30px;
+      background: linear-gradient(135deg, #007BFF, #0056b3);
+      color: #fff;
+      font-weight: bold;
+      font-size: 1rem;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    }
+
+    .form-link a:hover {
+      background: linear-gradient(135deg, #0056b3, #003f7f);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    }
+
+    .form-link a:active {
+      transform: translateY(0);
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    }
 
     /* ===== Calendriers ===== */
     .calendriers {
@@ -148,14 +178,10 @@
       text-decoration: underline;
     }
 
-    /* ===== Responsive petits écrans ===== */
+    /* ===== Responsive ===== */
     @media screen and (max-width: 768px) {
       header h1 {
         font-size: 1.6rem;
-      }
-
-      .form-container iframe {
-        height: 600px;
       }
 
       nav {
@@ -165,6 +191,11 @@
 
       .left-links a {
         text-align: center;
+      }
+
+      .form-link a {
+        width: 90%;
+        font-size: 1rem;
       }
     }
   </style>
@@ -183,7 +214,9 @@
   <img class="logo-fixed" src="logo_ecole.png" alt="Logo de l'école">
 
   <!-- ===== Bouton Réclamation ===== -->
-  
+  <a href="reclamations.html" class="btn-reclamation-fixed">
+    📩 Déposer une réclamation
+  </a>
 
   <!-- ===== Header ===== -->
   <header>
@@ -193,21 +226,17 @@
     </h1>
   </header>
 
-  <!-- ===== Section Formulaire ===== -->
+  <!-- ===== Section Formulaire avec bouton ===== -->
   <section id="choix-enseignant" class="form-section">
     <h2>Choix du jour de surveillance</h2>
     <p>
-      Remplissez le formulaire officiel ci-dessous pour enregistrer votre choix dans la feuille de suivi.
+      Cliquez sur le bouton ci-dessous pour remplir le formulaire officiel et enregistrer votre choix.
     </p>
-
-    <!-- Intégration du formulaire via iframe -->
-    <div class="form-container">
-      <iframe 
-        src="https://script.google.com/macros/s/AKfycbygYuwwGai8OJe0QGIFCRsXEz_8vtCnjaUhJJ9kDube0GgowmjRtsSZFy7dj0jHTDAs/exec" 
-        width="100%" 
-        height="800" 
-        style="border:none;">
-      </iframe>
+    <div class="form-link">
+      <a href="https://script.google.com/macros/s/AKfycbygYuwwGai8OJe0QGIFCRsXEz_8vtCnjaUhJJ9kDube0GgowmjRtsSZFy7dj0jHTDAs/exec" 
+         target="_blank">
+        Remplir les jours de Surveillances
+      </a>
     </div>
   </section>
 
@@ -238,5 +267,3 @@
 
 </body>
 </html>
-
-
