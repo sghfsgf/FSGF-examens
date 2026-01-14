@@ -85,7 +85,7 @@ form.addEventListener("submit", function(event) {
   // Crée une chaîne URL-encodée des données du formulaire
   const data = new URLSearchParams(new FormData(form)).toString();
 
-  fetch("TON_WEB_APP_URL", {
+  fetch("https://script.google.com/macros/s/AKfycbzmZuz32NssQ3khol_r0nnpFeDYeTMbJwqJemW0oJL4Z93QgWE-CA7d_OfeU6s3fhNN/exec", {
     method: "POST",
     headers: {
       "Content-Type": "application/x-www-form-urlencoded"
@@ -142,6 +142,7 @@ form.addEventListener("submit", function(event) {
 
 </body>
 </html>
+
 
 
 
