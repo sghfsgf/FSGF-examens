@@ -96,7 +96,7 @@ document.getElementById("reclamationForm").addEventListener("submit", async func
     details: e.target.details.value
   };
 
-  const res = await fetch("TON_URL_WEBAPP_APPS_SCRIPT", {
+  const res = await fetch("https://script.google.com/macros/s/AKfycbwAFLDsibYj9nuVkM0xF8Zlq4JQdQFr2ET3KmLoo1PT_NZ1xcIdxB6NNdIYYJmKX-Na/exec", {
     method: "POST",
     body: JSON.stringify(data),
     headers: {"Content-Type":"application/json"}
@@ -147,6 +147,7 @@ document.getElementById("reclamationForm").addEventListener("submit", async func
 
 </body>
 </html>
+
 
 
 
