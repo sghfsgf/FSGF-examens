@@ -32,7 +32,21 @@
      
 </head>
 
-  <h2>Formulaire de Réclamation</h2>
+ <!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Formulaire de Réclamation</title>
+<style>
+  body { font-family: Arial, sans-serif; max-width: 600px; margin: auto; padding: 20px; }
+  label { display: block; margin-top: 10px; }
+  input, select, textarea, button { width: 100%; padding: 8px; margin-top: 5px; }
+  #message { margin-top: 15px; font-weight: bold; }
+</style>
+</head>
+<body>
+
+<h2>Formulaire de Réclamation</h2>
 
 <form id="reclamationForm">
 
@@ -77,20 +91,24 @@
 const form = document.getElementById("reclamationForm");
 const messageDiv = document.getElementById("message");
 
+// Intercepter l’envoi pour ne pas quitter la page
 form.addEventListener("submit", function (event) {
-  event.preventDefault(); // Empêche l'envoi normal
+  event.preventDefault(); // <-- Empêche la navigation vers une autre page
 
-  const data = new URLSearchParams(new FormData(form)).toString();
+  // Préparer les données
+  const formData = new FormData(form);
+  const bodyData = new URLSearchParams(formData).toString();
 
+  // Envoyer en AJAX
   fetch("https://script.google.com/macros/s/AKfycbzmZuz32NssQ3khol_r0nnpFeDYeTMbJwqJemW0oJL4Z93QgWE-CA7d_OfeU6s3fhNN/exec", {
     method: "POST",
     headers: {
       "Content-Type": "application/x-www-form-urlencoded"
     },
-    body: data
+    body: bodyData
   })
   .then(response => {
-    // Affiche le message de succès
+    // Afficher le message de succès
     messageDiv.textContent = "✅ Réclamation envoyée avec succès !";
     messageDiv.style.color = "green";
 
@@ -146,6 +164,7 @@ form.addEventListener("submit", function (event) {
 
 </body>
 </html>
+
 
 
 
