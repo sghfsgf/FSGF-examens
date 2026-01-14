@@ -34,45 +34,83 @@
 
   <h2>Formulaire de Réclamation</h2>
 
-  <form method="POST" action="https://script.google.com/macros/s/AKfycbzmZuz32NssQ3khol_r0nnpFeDYeTMbJwqJemW0oJL4Z93QgWE-CA7d_OfeU6s3fhNN/exec">
+<form id="reclamationForm">
 
-    <label>Département *</label>
-    <select name="department" required>
-      <option disabled selected value="">Choisir...</option>
-      <option value="SV">SV</option>
-      <option value="ST">ST</option>
-      <option value="INFO">INFO</option>
-      <option value="CH">CH</option>
-      <option value="PHYS">PHYS</option>
-      <option value="FT">FT</option>
-      <option value="MATHS">MATHS</option>
-      <option value="LANGUES">LANGUES</option>
-    </select>
+  <label>Département *</label>
+  <select name="department" required>
+    <option disabled selected value="">Choisir...</option>
+    <option value="SV">SV</option>
+    <option value="ST">ST</option>
+    <option value="INFO">INFO</option>
+    <option value="CH">CH</option>
+    <option value="PHYS">PHYS</option>
+    <option value="FT">FT</option>
+    <option value="MATHS">MATHS</option>
+    <option value="LANGUES">LANGUES</option>
+  </select>
 
-    <label>Nom de l'enseignant *</label>
-    <input type="text" name="nomEnseignant" required>
+  <label>Nom de l'enseignant *</label>
+  <input type="text" name="nomEnseignant" required>
 
-    <label>Adresse e-mail *</label>
-    <input type="email" name="email" required>
+  <label>Adresse e-mail *</label>
+  <input type="email" name="email" required>
 
-    <label>Type de Réclamation *</label>
-    <select name="typeReclamation" required>
-      <option disabled selected value="">Choisir...</option>
-      <option value="Réclamation 1">Réclamation 1</option>
-      <option value="Réclamation 2">Réclamation 2</option>
-      <option value="Réclamation 3">Réclamation 3</option>
-      <option value="Réclamation 4">Réclamation 4</option>
-      <option value="Réclamation 5">Réclamation 5</option>
-    </select>
+  <label>Type de Réclamation *</label>
+  <select name="typeReclamation" required>
+    <option disabled selected value="">Choisir...</option>
+    <option value="Réclamation 1">Réclamation 1</option>
+    <option value="Réclamation 2">Réclamation 2</option>
+    <option value="Réclamation 3">Réclamation 3</option>
+    <option value="Réclamation 4">Réclamation 4</option>
+    <option value="Réclamation 5">Réclamation 5</option>
+  </select>
 
-    <label>Détails (facultatif)</label>
-    <textarea name="details" rows="4"></textarea>
+  <label>Détails (facultatif)</label>
+  <textarea name="details" rows="4"></textarea>
 
-    <button type="submit">Envoyer</button>
+  <button type="submit">Envoyer</button>
+</form>
 
-  </form>
+<div id="message"></div>
 
-  <div id="message"></div>
+<script>
+const form = document.getElementById("reclamationForm");
+const messageDiv = document.getElementById("message");
+
+form.addEventListener("submit", function (event) {
+  event.preventDefault(); // Empêche l'envoi normal
+
+  const data = new URLSearchParams(new FormData(form)).toString();
+
+  fetch("https://script.google.com/macros/s/AKfycbzmZuz32NssQ3khol_r0nnpFeDYeTMbJwqJemW0oJL4Z93QgWE-CA7d_OfeU6s3fhNN/exec", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded"
+    },
+    body: data
+  })
+  .then(response => {
+    // Affiche le message de succès
+    messageDiv.textContent = "✅ Réclamation envoyée avec succès !";
+    messageDiv.style.color = "green";
+
+    // Vide le formulaire
+    form.reset();
+
+    // Faire disparaître le message après 3 secondes
+    setTimeout(() => {
+      messageDiv.textContent = "";
+    }, 3000);
+  })
+  .catch(error => {
+    messageDiv.textContent = "❌ Erreur d’envoi — réessayez.";
+    messageDiv.style.color = "red";
+    setTimeout(() => {
+      messageDiv.textContent = "";
+    }, 3000);
+  });
+});
+</script>
 
 
   <!-- ===== Surveillances ===== -->
@@ -108,6 +146,7 @@
 
 </body>
 </html>
+
 
 
 
