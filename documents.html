@@ -48,87 +48,70 @@
 
 <h2>Formulaire de Réclamation</h2>
 
-<form id="reclamationForm">
+  <!-- iFrame caché cible de la soumission -->
+  <iframe name="hidden_iframe"></iframe>
 
-  <label>Département *</label>
-  <select name="department" required>
-    <option disabled selected value="">Choisir...</option>
-    <option value="SV">SV</option>
-    <option value="ST">ST</option>
-    <option value="INFO">INFO</option>
-    <option value="CH">CH</option>
-    <option value="PHYS">PHYS</option>
-    <option value="FT">FT</option>
-    <option value="MATHS">MATHS</option>
-    <option value="LANGUES">LANGUES</option>
-  </select>
+  <form
+    method="POST"
+    action="https://script.google.com/macros/s/AKfycbzmZuz32NssQ3khol_r0nnpFeDYeTMbJwqJemW0oJL4Z93QgWE-CA7d_OfeU6s3fhNN/exec"
+    target="hidden_iframe"
+  >
 
-  <label>Nom de l'enseignant *</label>
-  <input type="text" name="nomEnseignant" required>
+    <label>Département *</label>
+    <select name="department" required>
+      <option disabled selected value="">Choisir...</option>
+      <option value="SV">SV</option>
+      <option value="ST">ST</option>
+      <option value="INFO">INFO</option>
+      <option value="CH">CH</option>
+      <option value="PHYS">PHYS</option>
+      <option value="FT">FT</option>
+      <option value="MATHS">MATHS</option>
+      <option value="LANGUES">LANGUES</option>
+    </select>
 
-  <label>Adresse e-mail *</label>
-  <input type="email" name="email" required>
+    <label>Nom de l'enseignant *</label>
+    <input type="text" name="nomEnseignant" required>
 
-  <label>Type de Réclamation *</label>
-  <select name="typeReclamation" required>
-    <option disabled selected value="">Choisir...</option>
-    <option value="Réclamation 1">Réclamation 1</option>
-    <option value="Réclamation 2">Réclamation 2</option>
-    <option value="Réclamation 3">Réclamation 3</option>
-    <option value="Réclamation 4">Réclamation 4</option>
-    <option value="Réclamation 5">Réclamation 5</option>
-  </select>
+    <label>Adresse e-mail *</label>
+    <input type="email" name="email" required>
 
-  <label>Détails (facultatif)</label>
-  <textarea name="details" rows="4"></textarea>
+    <label>Type de Réclamation *</label>
+    <select name="typeReclamation" required>
+      <option disabled selected value="">Choisir...</option>
+      <option value="Réclamation 1">Réclamation 1</option>
+      <option value="Réclamation 2">Réclamation 2</option>
+      <option value="Réclamation 3">Réclamation 3</option>
+      <option value="Réclamation 4">Réclamation 4</option>
+      <option value="Réclamation 5">Réclamation 5</option>
+    </select>
 
-  <button type="submit">Envoyer</button>
-</form>
+    <label>Détails (facultatif)</label>
+    <textarea name="details" rows="4"></textarea>
 
-<div id="message"></div>
+    <button type="submit">Envoyer</button>
 
-<script>
-const form = document.getElementById("reclamationForm");
-const messageDiv = document.getElementById("message");
+  </form>
 
-// Intercepter l’envoi pour ne pas quitter la page
-form.addEventListener("submit", function (event) {
-  event.preventDefault(); // <-- Empêche la navigation vers une autre page
+  <div id="message"></div>
 
-  // Préparer les données
-  const formData = new FormData(form);
-  const bodyData = new URLSearchParams(formData).toString();
+  <script>
+    document.getElementsByName("hidden_iframe")[0].addEventListener("load", function() {
+      const msg = document.getElementById("message");
 
-  // Envoyer en AJAX
-  fetch("https://script.google.com/macros/s/AKfycbzmZuz32NssQ3khol_r0nnpFeDYeTMbJwqJemW0oJL4Z93QgWE-CA7d_OfeU6s3fhNN/exec", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/x-www-form-urlencoded"
-    },
-    body: bodyData
-  })
-  .then(response => {
-    // Afficher le message de succès
-    messageDiv.textContent = "✅ Réclamation envoyée avec succès !";
-    messageDiv.style.color = "green";
+      // Message de confirmation
+      msg.textContent = "✅ Réclamation envoyée avec succès !";
+      msg.style.color = "green";
 
-    // Vide le formulaire
-    form.reset();
+      // Effacer le formulaire
+      document.querySelector("form").reset();
 
-    // Faire disparaître le message après 3 secondes
-    setTimeout(() => {
-      messageDiv.textContent = "";
-    }, 3000);
-  })
-  .catch(error => {
-    messageDiv.textContent = "❌ Erreur d’envoi — réessayez.";
-    messageDiv.style.color = "red";
-    setTimeout(() => {
-      messageDiv.textContent = "";
-    }, 3000);
-  });
-});
-</script>
+      // Faire disparaître le message après 2 secondes
+      setTimeout(() => {
+        msg.textContent = "";
+      }, 2000); // 2000 ms = 2 s
+    });
+  </script>
 
 
   <!-- ===== Surveillances ===== -->
@@ -164,6 +147,7 @@ form.addEventListener("submit", function (event) {
 
 </body>
 </html>
+
 
 
 
