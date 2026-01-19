@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Surveillances – Planification des Examens</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Menu responsive (même menu que les autres pages) -->
+  <nav class="main-nav">
+    <a class="logo" href="index.html">
+      <img src="logo_ecole.png" alt="Logo de l'école">
+    </a>
+
+    <div class="hamburger" id="hamburger">☰</div>
+
+    <ul class="menu" id="menu">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="examens.html">Examens</a></li>
+      <li><a href="surveillances.html">Surveillances</a></li>
+      <li><a href="reclamations.html">Réclamations</a></li>
+      <li><a href="ressources.html">Ressources</a></li>
+    </ul>
+  </nav>
+
+  <!-- ========================================== -->
+  <!-- Contenu principal de la page Surveillances -->
+  <!-- ========================================== -->
+
+  <header>
+    <h1>Surveillances</h1>
+  </header>
+
+  <!-- ===== Section “Choix du jour de surveillance” ===== -->
+  <section id="choix-enseignant" class="form-section">
+    <h2>Choix du jour de surveillance</h2>
+    <p>
+      Cliquez sur le bouton ci-dessous pour remplir le formulaire officiel et enregistrer votre choix.
+    </p>
+    <div class="form-link">
+      <a href="https://script.google.com/macros/s/AKfycbzIkggY4fKURrDzzUVYLqAOopaYuRiO3zbYnMkYHTWlEB624STH6DZvXmB0_CRNYAIK/exec" 
+         target="_blank">
+        Remplir les jours de Surveillances
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>Site officiel : <a href="https://fsgf.rnu.tn/" target="_blank">https://fsgf.rnu.tn/</a></p>
+    <p>© 2026 Service de Planification</p>
+  </footer>
+
+  <!-- ===== Script du menu responsive ===== -->
+  <script>
+    document.getElementById("hamburger").addEventListener("click", function() {
+      document.getElementById("menu").classList.toggle("active");
+    });
+  </script>
+
+</body>
+</html>
