@@ -2,42 +2,134 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <!-- ✅ OBLIGATOIRE POUR MOBILE -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Déposer une réclamation — G-PlanEx</title>
+  <title>Réclamations – Planification des Examens</title>
+
+  <!-- CSS externe -->
   <link rel="stylesheet" href="styles.css">
   <link rel="manifest" href="manifest.json">
+
 </head>
 <body>
 
-  <header>
-    <h1>Déposer une réclamation ou une demande</h1>
-    <p>Merci de remplir le formulaire ci-dessous. Vos réponses sont centralisées automatiquement.</p>
-  </header>
+<!-- ===== MENU RESPONSIVE ===== -->
+<nav class="main-nav">
+  <a class="logo" href="index.html">
+    <img src="logo_ecole.png" alt="Logo de l'école">
+  </a>
 
-  <main>
-    <div class="form-container">
-      <!-- Iframe Google Form -->
-      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeiOmROOeR5YP9ubpl4mznfpefIxXISapPQV5L88G_B64Xohw/viewform?embedded=true" 
-              width="100%" height="700" frameborder="0" marginheight="0" marginwidth="0">
-      </iframe>
-    </div>
+  <div class="hamburger" id="hamburger">☰</div>
 
-    <p style="text-align:center; margin-top:15px;">
-      <a href="index.html" class="btn-link">← Retour à l’accueil</a>
-    </p>
-  </main>
+  <ul class="menu" id="menu">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="examens.html">Examens</a></li>
+    <li><a href="surveillances.html">Surveillances</a></li>
+    <li><a href="reclamations.html">Réclamations</a></li>
+    <li><a href="ressources.html">Ressources</a></li>
+  </ul>
+</nav>
 
-  <footer>
-    <p>© 2026 PlanificationExamen</p>
-    <p>Site officiel : <a href="https://fsgf.rnu.tn/" target="_blank">https://fsgf.rnu.tn/</a></p>
-  </footer>
+<!-- ===== LOGO FIXE ===== -->
+<img class="logo-fixed" src="logo_ecole.png" alt="Logo de l'école">
+
+<!-- ===== HEADER ===== -->
+<header>
+  <h1>Planification des Examens et des Surveillances</h1>
+</header>
+
+<!-- ===== FORMULAIRE DE RÉCLAMATION ===== -->
+<section class="form-section">
+  <h2>Formulaire de Réclamation</h2>
+
+  <!-- iFrame caché -->
+  <iframe name="hidden_iframe" style="display:none;"></iframe>
+
+  <form
+    method="POST"
+    action="https://script.google.com/macros/s/AKfycbzmZuz32NssQ3khol_r0nnpFeDYeTMbJwqJemW0oJL4Z93QgWE-CA7d_OfeU6s3fhNN/exec"
+    target="hidden_iframe"
+  >
+    <label>Département *</label>
+    <select name="department" required>
+      <option disabled selected value="">Choisir...</option>
+      <option value="SV">SV</option>
+      <option value="ST">ST</option>
+      <option value="INFO">INFO</option>
+      <option value="CH">CH</option>
+      <option value="PHYS">PHYS</option>
+      <option value="FT">FT</option>
+      <option value="MATHS">MATHS</option>
+      <option value="LANGUES">LANGUES</option>
+    </select>
+
+    <label>Nom de l'enseignant *</label>
+    <input type="text" name="nomEnseignant" required>
+
+    <label>Adresse e-mail *</label>
+    <input type="email" name="email" required>
+
+    <label>Type de Réclamation *</label>
+    <select name="typeReclamation" required>
+      <option disabled selected value="">Choisir...</option>
+      <option value="Demande pour le vice-doyen de la FSGF">Demande pour le vice-doyen de la FSGF</option>
+      <option value="Changer une matière dans le calendrier">Changer une matière dans le calendrier</option>
+      <option value="Permuter des matières">Permuter des matières</option>
+      <option value="Être absent pendant les jours des surveillances">Être absent pendant les jours des surveillances</option>
+      <option value="Avoir une information">Avoir une information</option>
+      <option value="Autre type de Réclamation">Autre type de Réclamation</option>
+    </select>
+
+    <label>Détails (facultatif)</label>
+    <textarea name="details" rows="4"></textarea>
+
+    <button type="submit">Envoyer</button>
+  </form>
+
+  <div id="message"></div>
+
+  <script>
+    document.getElementsByName("hidden_iframe")[0].addEventListener("load", function() {
+      const msg = document.getElementById("message");
+      msg.textContent = "✅ Réclamation envoyée avec succès !";
+      msg.style.color = "green";
+      document.querySelector("form").reset();
+      setTimeout(() => msg.textContent = "", 2000);
+    });
+  </script>
+</section>
+
+<!-- ===== SURVEILLANCES & DOCUMENTS ===== -->
+<section class="calendriers">
+  <div class="section-title">🗂️ Documents des Surveillances</div>
+  <div class="left-links">
+    <a class="pdf-link" href="liste_enseignants.pdf" target="_blank">📄 Liste des enseignants</a>
+  </div>
+</section>
+
+<section class="calendriers">
+  <div class="section-title">📊 Documents Excel par Département</div>
+  <div class="left-links">
+    <a class="pdf-link" href="Dep_SV.xlsx" download>📥 Département SV</a>
+    <a class="pdf-link" href="Dep_ST.xlsx" download>📥 Département ST</a>
+    <a class="pdf-link" href="Dep_INFO.xlsx" download>📥 Département INFO</a>
+    <a class="pdf-link" href="Dep_CH.xlsx" download>📥 Département CH</a>
+    <a class="pdf-link" href="Dep_PHYS.xlsx" download>📥 Département PHYS</a>
+    <a class="pdf-link" href="Dep_FT.xlsx" download>📥 Département FT</a>
+    <a class="pdf-link" href="Dep_MATHS.xlsx" download>📥 Département MATHS</a>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <p>Site officiel : <a href="https://fsgf.rnu.tn/" target="_blank">https://fsgf.rnu.tn/</a></p>
+  <p>© 2026 Service de Planification</p>
+</footer>
+
+<!-- ===== SCRIPT MENU MOBILE ===== -->
 <script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('service-worker.js')
-      .then(reg => console.log('Service Worker enregistré:', reg))
-      .catch(err => console.log('Erreur Service Worker:', err));
-  }
+  document.getElementById("hamburger").addEventListener("click", function() {
+    document.getElementById("menu").classList.toggle("active");
+  });
 </script>
 
 </body>
