@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Examens – Planification des Examens</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ===== MENU RESPONSIVE ===== -->
+<nav class="main-nav">
+  <a class="logo" href="index.html">
+    <img src="logo_ecole.png" alt="Logo de l'école">
+  </a>
+  <div class="hamburger" id="hamburger">☰</div>
+  <ul class="menu" id="menu">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="examens.html">Examens</a></li>
+    <li><a href="surveillances.html">Surveillances</a></li>
+    <li><a href="reclamations.html">Réclamations</a></li>
+    <li><a href="ressources.html">Ressources</a></li>
+  </ul>
+</nav>
+
+<!-- ===== CONTENT EXAMENS ===== -->
+<header>
+  <h1>Examens</h1>
+</header>
+
+<section class="calendriers">
+  <div class="section-title">
+    📅 Session Rattrapage : période 26/01/2026 - 31/01/2026
+  </div>
+  <div class="left-links">
+    <a class="pdf-link" href="examens_L1.pdf" target="_blank">📄 Licence 1</a>
+    <a class="pdf-link" href="examens_L2.pdf" target="_blank">📄 Licence 2</a>
+    <a class="pdf-link" href="examens_L3.pdf" target="_blank">📄 Licence 3</a>
+    <a class="pdf-link" href="examens_masters.pdf" target="_blank">📄 Mastères</a>
+    <a class="pdf-link" href="examens_complet.pdf" target="_blank">📄 Calendrier complet FSGF</a>
+    <a class="pdf-link" href="reglement_examens.pdf" target="_blank">📄 Règlement des examens</a>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <p>Site officiel : <a href="https://fsgf.rnu.tn/" target="_blank">https://fsgf.rnu.tn/</a></p>
+  <p>© 2026 Service de Planification</p>
+</footer>
+
+<!-- ===== SCRIPT MENU MOBILE ===== -->
+<script>
+  document.getElementById("hamburger").addEventListener("click", function() {
+    document.getElementById("menu").classList.toggle("active");
+  });
+</script>
+
+</body>
+</html>
