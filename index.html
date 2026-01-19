@@ -46,9 +46,15 @@
 <!--  <p>Site officiel : <a href="https://fsgf.rnu.tn/" target="_blank">https://fsgf.rnu.tn/</a></p>
  <!-- <p>© 2026 Service de Planification</p>
 <!--</footer>
-
-
 <script>
+fetch("https://script.google.com/macros/s/AKfycbwWu6r4RP9XiEXaP0aHBCbjKU0Tk-nScePFWsnZ4zOtkyhWAoK4sijTDFg-Qk9wMgOKEQ/exec")
+  .then(r => r.text())
+  .then(n => {
+    document.getElementById("visites").textContent = "Visites : " + n;
+  });
+</script>
+
+
   document.getElementById("hamburger").addEventListener("click", function() {
     document.getElementById("menu").classList.toggle("active");
   });
@@ -58,6 +64,7 @@
 
 </body>
 </html>
+
 
 
 
