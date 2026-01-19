@@ -21,7 +21,7 @@ body {
   padding: 12px 20px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   position: fixed;
   top: 0;
   width: 100%;
@@ -226,6 +226,7 @@ footer a {
     padding: 14px;
   }
 }
+
 
 
 
