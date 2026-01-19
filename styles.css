@@ -261,41 +261,37 @@ img, iframe {
   height: auto;
 }
 /* ===== MENU MOBILE ===== */
-@media screen and (max-width: 768px) {
-  .hamburger {
-    display: block;      /* afficher le ☰ */
-    font-size: 28px;
-    cursor: pointer;
-    margin-left: 20px;
-    z-index: 1100;       /* au-dessus du menu */
-  }
-
-  .menu {
-    display: none;               /* menu caché par défaut */
-    flex-direction: column;      /* menu vertical */
-    width: 100%;
-    position: absolute;          /* pour flotter au-dessus */
-    top: 60px;                   /* juste sous le menu fixe */
-    left: 0;
-    background-color: #ff8c00;   /* même couleur que la nav */
-    z-index: 1000;
-    padding: 10px 0;
-  }
-
-  .menu.active {
-    display: flex;               /* menu visible quand actif */
-  }
-
-  .menu li a {
-    padding: 12px 20px;
-    border-top: 1px solid #fff;
-    color: black;
-    font-weight: bold;
-  }
-
-  .menu li a:hover {
-    background-color: #e07b00;
-    color: white;
-  }
+/* Menu responsive ajusté pour mobile et tablette */
+.menu {
+  display: flex !important;  /* le menu reste toujours affiché */
+  flex-direction: row;       /* horizontal comme sur PC */
+  gap: 20px;                 /* espace entre les liens */
+  width: auto;
 }
+
+.hamburger {
+  display: none;             /* ne plus afficher les trois traits */
+}
+
+.menu li a {
+  padding: 8px 12px;         /* ajustement du padding pour mobile */
+  font-size: 0.95rem;
+}
+
+/* Boutons ajustés au texte et écran */
+.btn-doc,
+.btn-surveillance,
+form button {
+  font-size: 1rem;
+  padding: 10px 12px;
+  width: auto;
+}
+
+/* PDF links */
+.pdf-link {
+  font-size: 1rem;
+  padding: 8px;
+}
+
+
 
