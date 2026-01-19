@@ -1,11 +1,28 @@
-/* =================== MENU PRINCIPAL =================== */
+
+/* ===================================================
+   TYPOGRAPHIE GLOBALE
+   =================================================== */
+html {
+  font-size: 18px; /* base lisible pour tous les textes */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  color: #222;
+  line-height: 1.6;
+}
+
+/* ===================================================
+   MENU PRINCIPAL ORANGE VIF
+   =================================================== */
 .main-nav {
   background-color: #ff8c00;
+  padding: 12px 20px;
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* logo + liens à gauche */
-  gap: 20px;
-  padding: 12px 20px;
+  justify-content: flex-start;
   position: fixed;
   top: 0;
   width: 100%;
@@ -43,47 +60,175 @@
   display: none;
   font-size: 24px;
   cursor: pointer;
-  color: black;
 }
 
-/* =================== RESPONSIVE =================== */
-@media screen and (max-width: 1024px) {
-  .container {
-    max-width: 90%;
-    padding: 0 15px;
-  }
-}
-
+/* Responsive pour écrans étroits */
 @media screen and (max-width: 768px) {
-  html {
-    font-size: 17px;
-  }
-
-  /* Menu responsive caché par défaut */
   .menu {
     display: none;
     flex-direction: column;
     width: 100%;
-    position: absolute;
-    top: 60px; /* juste sous la barre */
-    left: 0;
-    background-color: #ff8c00;
-    z-index: 999;
   }
-
-  /* Menu visible quand hamburger actif */
-  .menu.active {
-    display: flex;
-  }
-
   .hamburger {
     display: block;
   }
-
+  .menu.active {
+    display: flex;
+  }
   .menu li a {
     padding: 12px;
     border-top: 1px solid #fff;
-    font-size: 0.95rem;
-    color: black;
   }
 }
+
+/* ===================================================
+   CONTENEUR PRINCIPAL POUR LE CONTENU
+   =================================================== */
+.container {
+  max-width: 960px;
+  margin: 80px auto 40px auto; /* espace ajusté sous le menu, bas plus léger */
+  padding: 0 20px;
+  text-align: left;
+}
+
+
+/* ===================================================
+   TITRES DES PAGES
+   =================================================== */
+h1 {
+  font-size: 1.8rem; /* moins grand, ≈ 28px */
+  color: #007BFF;
+  margin-top: 0.2rem;
+  margin-bottom: 0.6rem;
+  font-weight: bold;
+}
+
+
+header p {
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
+}
+
+/* ===================================================
+   BLOCS DE DOCUMENTS (Examens, Ressources, etc.)
+   =================================================== */
+.examens-list,
+.resources-list {
+  display: block; /* empiler verticalement */
+  margin-top: 20px;
+}
+
+/* Liens PDF simples */
+.pdf-link {
+  display: block;
+  font-size: 1.125rem;
+  color: #007BFF;
+  text-decoration: none;
+  padding: 10px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  background: #f5f5f5;
+  border: 1px solid #ccc;
+  transition: background 0.3s, border-color 0.3s;
+}
+
+.pdf-link:hover {
+  background: #e1eaff;
+  border-color: #007BFF;
+  text-decoration: underline;
+}
+
+/* ===================================================
+   BOUTONS (Formulaire, Surveillances, etc.)
+   =================================================== */
+.btn-doc,
+.btn-surveillance {
+  display: block;
+  width: 100%;
+  background: #007BFF;
+  color: white;
+  text-decoration: none;
+  padding: 16px;
+  font-size: 1.125rem;
+  font-weight: bold;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  text-align: center;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.btn-doc:hover,
+.btn-surveillance:hover {
+  background: #0056b3;
+  transform: translateY(-2px);
+}
+
+/* ===================================================
+   SECTIONS
+   =================================================== */
+section {
+  margin-bottom: 30px;
+  padding: 15px;
+  border-radius: 8px;
+  background: #fafafa;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+/* Domaine des formulaires simples */
+form input,
+form select,
+form textarea,
+form button {
+  font-size: 1rem;
+  padding: 8px;
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+form button {
+  background: #007BFF;
+  color: white;
+  border: none;
+  padding: 12px;
+  cursor: pointer;
+}
+
+/* ===================================================
+   FOOTER
+   =================================================== */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #007BFF;
+  color: white;
+  font-size: 1rem;
+}
+
+footer a {
+  color: white;
+  text-decoration: underline;
+}
+
+/* ===================================================
+   RESPONSIVE AJUSTEMENTS
+   =================================================== */
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 17px;
+  }
+  .btn-doc,
+  .btn-surveillance {
+    font-size: 1rem;
+    padding: 14px;
+  }
+}
+
+
+
+
+
