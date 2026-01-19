@@ -119,5 +119,54 @@
     flex: 1 1 100%; /* prend toute la largeur sur téléphone */
   }
 }
+/* ===== TYPOGRAPHIE GLOBALE ===== */
+html {
+  font-size: 16px; /* base lisible partout */
+}
+
+body {
+  font-size: 1rem; /* équivaut à 16px */
+  line-height: 1.6; /* meilleur interligne pour la lecture */
+  font-family: Arial, sans-serif; /* police claire et moderne */
+  color: #222;
+}
+
+/* ===== TITRES ===== */
+h1 {
+  font-size: 2rem; /* ~32px pour les titres principaux */
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 1.6rem; /* ~25px pour sous‑titres */
+  margin-top: 1.5rem;
+  margin-bottom: 0.7rem;
+}
+
+h3 {
+  font-size: 1.4rem; /* ~22px */
+  margin-top: 1.2rem;
+  margin-bottom: 0.6rem;
+}
+
+/* ===== CONTENU, PARAGRAPHES, LISTES ===== */
+p, li {
+  font-size: 1rem; /* ~16px → confortable pour lecture */
+  margin-bottom: 0.8rem;
+}
+
+/* ===== LIENS ET BOUTONS ===== */
+a {
+  font-size: 1rem; /* même taille de base que le texte */
+}
+
+/* ===== BOUTONS SPÉCIFIQUES ===== */
+.btn-doc,
+.btn-surveillance {
+  font-size: 1.125rem; /* ~18px pour boutons */
+  font-weight: bold;
+}
+
 
 
