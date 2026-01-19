@@ -85,10 +85,11 @@ body {
    =================================================== */
 .container {
   max-width: 960px;
-  margin: 100px auto 60px auto; /* espace sous le menu fixe + bas */
+  margin: 80px auto 40px auto; /* espace ajusté sous le menu, bas plus léger */
   padding: 0 20px;
   text-align: left;
 }
+
 
 /* ===================================================
    TITRES DES PAGES
@@ -225,5 +226,6 @@ footer a {
     padding: 14px;
   }
 }
+
 
 
