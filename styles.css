@@ -260,3 +260,42 @@ img, iframe {
   max-width: 100%;
   height: auto;
 }
+/* ===== MENU MOBILE ===== */
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: block;      /* afficher le ☰ */
+    font-size: 28px;
+    cursor: pointer;
+    margin-left: 20px;
+    z-index: 1100;       /* au-dessus du menu */
+  }
+
+  .menu {
+    display: none;               /* menu caché par défaut */
+    flex-direction: column;      /* menu vertical */
+    width: 100%;
+    position: absolute;          /* pour flotter au-dessus */
+    top: 60px;                   /* juste sous le menu fixe */
+    left: 0;
+    background-color: #ff8c00;   /* même couleur que la nav */
+    z-index: 1000;
+    padding: 10px 0;
+  }
+
+  .menu.active {
+    display: flex;               /* menu visible quand actif */
+  }
+
+  .menu li a {
+    padding: 12px 20px;
+    border-top: 1px solid #fff;
+    color: black;
+    font-weight: bold;
+  }
+
+  .menu li a:hover {
+    background-color: #e07b00;
+    color: white;
+  }
+}
+
