@@ -130,6 +130,18 @@
     document.getElementById("menu").classList.toggle("active");
   });
 </script>
+<!-- ===== SCRIPT MENU MOBILE ===== -->
+<script>
+  // Récupérer le hamburger et le menu
+  const hamburger = document.getElementById("hamburger");
+  const menu = document.getElementById("menu");
+
+  // Au clic sur le hamburger
+  hamburger.addEventListener("click", function() {
+    menu.classList.toggle("active"); // ajoute/enlève la classe "active"
+  });
+</script>
 
 </body>
 </html>
+
