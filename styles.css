@@ -1,4 +1,21 @@
-/* — MENU PRINCIPAL ORANGE VIF — */
+/* ===================================================
+   TYPOGRAPHIE GLOBALE
+   =================================================== */
+html {
+  font-size: 18px; /* base lisible pour tous les textes */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  color: #222;
+  line-height: 1.6;
+}
+
+/* ===================================================
+   MENU PRINCIPAL ORANGE VIF
+   =================================================== */
 .main-nav {
   background-color: #ff8c00;
   padding: 12px 20px;
@@ -28,7 +45,7 @@
   color: black;
   font-weight: bold;
   padding: 8px 12px;
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 .menu li a:hover {
@@ -62,170 +79,78 @@
     border-top: 1px solid #fff;
   }
 }
-/* ===== CONTENEUR PRINCIPAL POUR PAGES ===== */
-.container {
-  max-width: 900px;  /* largeur max du contenu */
-  margin: 90px auto 40px auto; /* espace sous le menu (90px pour nav fixe) */
-  padding: 0 20px;
-  text-align: left; /* tout le contenu à gauche */
-}
 
-/* ===== HEADER DE PAGE ===== */
-.page-header {
-  margin-bottom: 25px;
-  color: #007BFF;
-  font-size: 1.8rem;
-}
-
-/* ===== LISTE DES DOCUMENTS EXAMENS ===== */
-.examens-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  justify-content: flex-start; /* ALIGNÉ À GAUCHE */
-}
-
-/* Boutons liens PDF */
-.btn-doc {
-  flex: 1 1 230px; /* s’adapte en lignes */
-  background: #f8f9fa;
-  border: 2px solid #007BFF;
-  color: #007BFF;
-  padding: 12px 16px;
-  text-align: left; /* texte à gauche dans le bouton */
-  border-radius: 8px;
-  font-weight: bold;
-  text-decoration: none;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  transition: background 0.3s, transform 0.2s;
-}
-
-.btn-doc:hover {
-  background: #007BFF;
-  color: white;
-  transform: translateY(-2px);
-}
-
-/* ===== SECTION UNIQUE POUR EXAMENS ===== */
-.examens-section-title {
-  font-size: 1.5rem;
-  margin-bottom: 15px;
-  color: #333;
-}
-
-/* ===== Responsive ===== */
-@media screen and (max-width: 600px) {
-  .btn-doc {
-    flex: 1 1 100%; /* prend toute la largeur sur téléphone */
-  }
-}
-/* ===== TYPOGRAPHIE GLOBALE ===== */
-html {
-  font-size: 16px; /* base lisible partout */
-}
-
-body {
-  font-size: 1rem; /* équivaut à 16px */
-  line-height: 1.6; /* meilleur interligne pour la lecture */
-  font-family: Arial, sans-serif; /* police claire et moderne */
-  color: #222;
-}
-
-/* ===== TITRES ===== */
-h1 {
-  font-size: 2rem; /* ~32px pour les titres principaux */
-  font-weight: bold;
-  margin-bottom: 1rem;
-}
-
-h2 {
-  font-size: 1.6rem; /* ~25px pour sous‑titres */
-  margin-top: 1.5rem;
-  margin-bottom: 0.7rem;
-}
-
-h3 {
-  font-size: 1.4rem; /* ~22px */
-  margin-top: 1.2rem;
-  margin-bottom: 0.6rem;
-}
-
-/* ===== CONTENU, PARAGRAPHES, LISTES ===== */
-p, li {
-  font-size: 1rem; /* ~16px → confortable pour lecture */
-  margin-bottom: 0.8rem;
-}
-
-/* ===== LIENS ET BOUTONS ===== */
-a {
-  font-size: 1rem; /* même taille de base que le texte */
-}
-
-/* ===== BOUTONS SPÉCIFIQUES ===== */
-.btn-doc,
-.btn-surveillance {
-  font-size: 1.125rem; /* ~18px pour boutons */
-  font-weight: bold;
-}
-
-/* ==========================
-   TYPOGRAPHIE GLOBALE
-   ========================== */
-html {
-  font-size: 18px; /* base un peu plus grande que 16px = facile à lire */
-}
-
-body {
-  font-family: Arial, sans-serif;
-  color: #222;
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
-}
-
-/* ==========================
-   CONTENEUR POUR PAGES
-   ========================== */
+/* ===================================================
+   CONTENEUR PRINCIPAL POUR LE CONTENU
+   =================================================== */
 .container {
   max-width: 960px;
-  margin: 100px auto 60px auto; /* espace sous le menu fixe et avant pied */
+  margin: 100px auto 60px auto; /* espace sous le menu fixe + bas */
   padding: 0 20px;
   text-align: left;
 }
 
-/* ==========================
-   TITRES
-   ========================== */
+/* ===================================================
+   TITRES DES PAGES
+   =================================================== */
 h1 {
-  font-size: 2.5rem;  /* environ 40px */
+  font-size: 2.4rem;
   color: #007BFF;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
 }
 
-h2 {
-  font-size: 2rem; /* environ 32px */
-  margin-top: 1.5rem;
-  margin-bottom: 0.7rem;
-  color: #333;
+header p {
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
 }
 
-/* ==========================
-   BOUTONS (PDF, FORMULAIRE, ETC.)
-   ========================== */
+/* ===================================================
+   BLOCS DE DOCUMENTS (Examens, Ressources, etc.)
+   =================================================== */
+.examens-list,
+.resources-list {
+  display: block; /* empiler verticalement */
+  margin-top: 20px;
+}
+
+/* Liens PDF simples */
+.pdf-link {
+  display: block;
+  font-size: 1.125rem;
+  color: #007BFF;
+  text-decoration: none;
+  padding: 10px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  background: #f5f5f5;
+  border: 1px solid #ccc;
+  transition: background 0.3s, border-color 0.3s;
+}
+
+.pdf-link:hover {
+  background: #e1eaff;
+  border-color: #007BFF;
+  text-decoration: underline;
+}
+
+/* ===================================================
+   BOUTONS (Formulaire, Surveillances, etc.)
+   =================================================== */
 .btn-doc,
 .btn-surveillance {
   display: block;
-  width: 100%; /* bloc haut → bas */
-  margin-bottom: 15px;
+  width: 100%;
   background: #007BFF;
   color: white;
   text-decoration: none;
   padding: 16px;
-  font-size: 1.125rem; /* ~20px */
+  font-size: 1.125rem;
   font-weight: bold;
   border-radius: 8px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
   text-align: center;
-  transition: transform 0.2s ease, background 0.3s ease;
+  transition: background 0.3s, transform 0.2s;
 }
 
 .btn-doc:hover,
@@ -234,41 +159,43 @@ h2 {
   transform: translateY(-2px);
 }
 
-/* ==========================
+/* ===================================================
    SECTIONS
-   ========================== */
+   =================================================== */
 section {
   margin-bottom: 30px;
   padding: 15px;
   border-radius: 8px;
-  background: #f9f9f9;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  background: #fafafa;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
 }
 
-/* ==========================
-   LISTES DE LIENS FICHIER
-   ========================== */
-.examens-list {
-  display: block; /* empile verticalement */
+/* Domaine des formulaires simples */
+form input,
+form select,
+form textarea,
+form button {
+  font-size: 1rem;
+  padding: 8px;
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
 }
 
-.pdf-link {
-  font-size: 1.125rem;
-  display: block;
-  padding: 12px 0;
-  margin-bottom: 10px;
-  color: #007BFF;
-  font-weight: bold;
-  text-decoration: none;
+form button {
+  background: #007BFF;
+  color: white;
+  border: none;
+  padding: 12px;
+  cursor: pointer;
 }
 
-.pdf-link:hover {
-  text-decoration: underline;
-}
-
-/* ==========================
+/* ===================================================
    FOOTER
-   ========================== */
+   =================================================== */
 footer {
   text-align: center;
   padding: 20px;
@@ -282,22 +209,16 @@ footer a {
   text-decoration: underline;
 }
 
-/* ==========================
-   RESPONSIVE (PETITS ÉCRANS)
-   ========================== */
+/* ===================================================
+   RESPONSIVE AJUSTEMENTS
+   =================================================== */
 @media screen and (max-width: 768px) {
   html {
     font-size: 17px;
   }
   .btn-doc,
   .btn-surveillance {
-    font-size: 1.125rem;
+    font-size: 1rem;
     padding: 14px;
   }
-  section {
-    padding: 12px;
-  }
 }
-
-
-
