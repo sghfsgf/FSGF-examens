@@ -5,80 +5,152 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Choix du jour de surveillance</title>
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f9f9f9;
-      margin: 0;
-      padding: 20px;
-    }
-    form {
-      max-width: 500px;
-      margin: 0 auto;
-      padding: 20px;
-      background-color: #fff;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-    h2 { text-align: center; color: #333; margin-bottom: 20px; }
-    label { display: block; margin-top: 10px; font-weight: bold; color: #555; }
-    input, select { width: 100%; padding: 8px; margin-top: 5px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; }
-    button { width: 100%; padding: 12px; font-size: 16px; font-weight: bold; color: #fff; background: linear-gradient(135deg, #007BFF, #0056b3); border: none; border-radius: 8px; cursor: pointer; transition: all 0.3s ease; }
-    button:hover { background: linear-gradient(135deg, #0056b3, #003f7f); transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
-    .home-link { text-align: center; margin-top: 15px; }
-    .home-link a { display: inline-block; padding: 10px 25px; background-color: #28a745; color: white; font-weight: bold; text-decoration: none; border-radius: 8px; transition: all 0.3s ease; }
-    .home-link a:hover { background-color: #218838; transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
-  </style>
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles.css">
 
   <!-- PWA manifest -->
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#007bff">
   <link rel="apple-touch-icon" href="logo_ecole.png">
+
+  <style>
+    /* Fond et centrage du formulaire */
+    body {
+      background-color: #f9f9f9;
+    }
+    .form-container {
+      max-width: 500px;
+      margin: 100px auto 40px auto; /* espace sous le menu fixe */
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    h2 { text-align: center; color: #333; margin-bottom: 20px; }
+    label { display: block; margin-top: 10px; font-weight: bold; color: #555; }
+    input, select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-sizing: border-box;
+    }
+
+    .btn-submit {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #fff;
+      background: linear-gradient(135deg, #007BFF, #0056b3);
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .btn-submit:hover {
+      background: linear-gradient(135deg, #0056b3, #003f7f);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .home-link {
+      text-align: center;
+      margin-top: 15px;
+    }
+    .home-link a {
+      display: inline-block;
+      padding: 10px 25px;
+      background-color: #28a745;
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+    .home-link a:hover {
+      background-color: #218838;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+  </style>
 </head>
 
 <body>
 
-  <form id="choixForm">
-    <h2>Choix du jour de surveillance</h2>
+  <!-- ===== MENU PRINCIPAL ===== -->
+  <nav class="main-nav">
+    <a class="logo" href="index.html">
+      <img src="logo_ecole.png" alt="Logo de l'école">
+    </a>
+    <div class="hamburger" id="hamburger">☰</div>
+    <ul class="menu" id="menu">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="examens.html">Examens</a></li>
+      <li><a href="surveillances.html">Surveillances</a></li>
+      <li><a href="reclamations.html">Réclamations</a></li>
+      <li><a href="ressources.html">Ressources</a></li>
+    </ul>
+  </nav>
 
-    <label for="enseignant">Nom et prénom</label>
-    <input type="text" id="enseignant" placeholder="مثال: محمد بن محمد" dir="rtl" lang="ar" required>
+  <!-- ===== FORMULAIRE ===== -->
+  <div class="form-container">
+    <form id="choixForm">
+      <h2>Choix du jour de surveillance</h2>
 
-    <label for="email">Email :</label>
-    <input type="email" id="email" placeholder="exemple@fsgf.tn" required>
+      <label for="enseignant">Nom et prénom</label>
+      <input type="text" id="enseignant" placeholder="مثال: محمد بن محمد" dir="rtl" lang="ar" required>
 
-    <label for="dept">Département :</label>
-    <select id="dept" required>
-      <option value="">Choisir département</option>
-      <option value="SV">SV</option>
-      <option value="ST">ST</option>
-      <option value="INFO">INFO</option>
-      <option value="CH">CH</option>
-      <option value="PHYS">PHYS</option>
-      <option value="FT">FT</option>
-      <option value="MATHS">MATHS</option>
-      <option value="LANGUES">LANGUES</option>
-    </select>
+      <label for="email">Email :</label>
+      <input type="email" id="email" placeholder="exemple@fsgf.tn" required>
 
-    <label for="jour">Jour :</label>
-    <select id="jour" required>
-      <option value="">Choisir jour</option>
-      <option value="J1">J1</option>
-      <option value="J2">J2</option>
-      <option value="J3">J3</option>
-      <option value="J4">J4</option>
-      <option value="J5">J5</option>
-      <option value="J6">J6</option>
-    </select>
+      <label for="dept">Département :</label>
+      <select id="dept" required>
+        <option value="">Choisir département</option>
+        <option value="SV">SV</option>
+        <option value="ST">ST</option>
+        <option value="INFO">INFO</option>
+        <option value="CH">CH</option>
+        <option value="PHYS">PHYS</option>
+        <option value="FT">FT</option>
+        <option value="MATHS">MATHS</option>
+        <option value="LANGUES">LANGUES</option>
+      </select>
 
-    <button type="submit">Valider</button>
+      <label for="jour">Jour :</label>
+      <select id="jour" required>
+        <option value="">Choisir jour</option>
+        <option value="J1">J1</option>
+        <option value="J2">J2</option>
+        <option value="J3">J3</option>
+        <option value="J4">J4</option>
+        <option value="J5">J5</option>
+        <option value="J6">J6</option>
+      </select>
 
-    <div class="home-link">
-      <a href="index.html">Page d'accueil</a>
-    </div>
-  </form>
+      <button type="submit" class="btn-submit">Valider</button>
+
+      <div class="home-link">
+        <a href="index.html">Page d'accueil</a>
+      </div>
+    </form>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    Site officiel : <a href="https://fsgf.rnu.tn/" target="_blank">https://fsgf.rnu.tn/</a> 
+    | © 2026 Service de Planification
+  </footer>
 
   <script>
+    // Hamburger menu
+    document.getElementById("hamburger").addEventListener("click", function() {
+      document.getElementById("menu").classList.toggle("active");
+    });
+
     // Gestion du formulaire
     document.getElementById("choixForm").addEventListener("submit", async function(e){
       e.preventDefault();
