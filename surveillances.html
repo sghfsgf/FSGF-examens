@@ -4,11 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Surveillances – Planification des Examens</title>
+
   <link rel="stylesheet" href="styles.css">
+
+  <!-- PWA manifest -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#007bff">
+  <link rel="apple-touch-icon" href="logo_ecole.png">
 </head>
 <body>
 
-  <!-- Menu responsive (même menu que les autres pages) -->
+  <!-- Menu responsive -->
   <nav class="main-nav">
     <a class="logo" href="index.html">
       <img src="logo_ecole.png" alt="Logo de l'école">
@@ -25,79 +31,65 @@
     </ul>
   </nav>
 
-  <!-- ========================================== -->
-  <!-- Contenu principal de la page Surveillances -->
-  <!-- ========================================== -->
-
   <header>
     <h1>Surveillances</h1>
   </header>
 
-  <!-- ===== Section “Choix du jour de surveillance” ===== -->
   <section id="choix-enseignant" class="form-section">
     <h2>Choix du jour de surveillance</h2>
-    <p>
-      Cliquez sur le bouton ci-dessous pour remplir le formulaire officiel et enregistrer votre choix.
-    </p>
+    <p>Cliquez sur le bouton ci-dessous pour remplir le formulaire officiel et enregistrer votre choix.</p>
     <div class="form-link">
-  <a class="btn-surveillance" 
-   href="https://script.google.com/macros/s/AKfycbzIkggY4fKURrDzzUVYLqAOopaYuRiO3zbYnMkYHTWlEB624STH6DZvXmB0_CRNYAIK/exec" 
-   target="_blank"
-   style="display:inline-block; padding:6px 12px; width:auto; text-align:center;">
-  Remplir les jours de Surveillances
-</a>
-
-</div>
-
+      <a class="btn-surveillance" 
+         href="https://script.google.com/macros/s/AKfycbzIkggY4fKURrDzzUVYLqAOopaYuRiO3zbYnMkYHTWlEB624STH6DZvXmB0_CRNYAIK/exec" 
+         target="_blank">
+        Remplir les jours de Surveillances
+      </a>
+    </div>
   </section>
 
-  <!-- ===== FOOTER ===== -->
   <footer>
     <p>Site officiel : <a href="https://fsgf.rnu.tn/" target="_blank">https://fsgf.rnu.tn/</a></p>
     <p>© 2026 Service de Planification</p>
   </footer>
 
-  <!-- ===== Script du menu responsive ===== -->
   <script>
+    // Menu hamburger
     document.getElementById("hamburger").addEventListener("click", function() {
       document.getElementById("menu").classList.toggle("active");
     });
+
+    // Service Worker pour PWA
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('./service-worker.js')
+      .then(() => console.log('Service Worker enregistré.'))
+      .catch(err => console.log('Erreur Service Worker :', err));
+    }
   </script>
 
   <style>
-/* ===== Bouton bleu pour Surveillances ===== */
-.btn-surveillance {
-  display: inline-block;
-  background-color: #007bff;
-  color: white;
-  padding: 14px 28px;
-  font-size: 1rem;
-  font-weight: bold;
-  border-radius: 8px;
-  text-align: center;
-  text-decoration: none;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.btn-surveillance:hover {
-  background-color: #0056b3;
-  transform: translateY(-2px);
-}
-
-.form-link {
-  text-align: center;
-  margin-top: 20px;
-}
-</style>
-
-
+    /* Bouton bleu pour Surveillances */
+    .btn-surveillance {
+      display: inline-block;
+      background-color: #007bff;
+      color: white;
+      padding: 14px 28px;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 8px;
+      text-align: center;
+      text-decoration: none;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    .btn-surveillance:hover {
+      background-color: #0056b3;
+      transform: translateY(-2px);
+    }
+    .form-link {
+      text-align: center;
+      margin-top: 20px;
+    }
+  </style>
 
 </body>
 </html>
-
-
-
-
-
-
