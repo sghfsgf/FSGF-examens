@@ -7,8 +7,11 @@
 
   <!-- CSS externe -->
   <link rel="stylesheet" href="styles.css">
-  <link rel="manifest" href="manifest.json">
 
+  <!-- PWA manifest -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#007bff">
+  <link rel="apple-touch-icon" href="logo_ecole.png">
 </head>
 <body>
 
@@ -17,9 +20,7 @@
   <a class="logo" href="index.html">
     <img src="logo_ecole.png" alt="Logo de l'école">
   </a>
-
   <div class="hamburger" id="hamburger">☰</div>
-
   <ul class="menu" id="menu">
     <li><a href="index.html">Accueil</a></li>
     <li><a href="examens.html">Examens</a></li>
@@ -29,19 +30,13 @@
   </ul>
 </nav>
 
-<!-- ===== LOGO FIXE ===== -->
-<!-- <img class="logo-fixed" src="logo_ecole.png" alt="Logo de l'école">
-
-<!-- ===== HEADER ===== -->
 <header>
   <h1>Planification des Examens et des Surveillances</h1>
 </header>
 
-<!-- ===== FORMULAIRE DE RÉCLAMATION ===== -->
 <section class="form-section">
   <h2>Formulaire de Réclamation</h2>
 
-  <!-- iFrame caché -->
   <iframe name="hidden_iframe" style="display:none;"></iframe>
 
   <form
@@ -81,10 +76,10 @@
 
     <label>Détails (facultatif)</label>
     <textarea name="details" rows="4"></textarea>
-<button type="submit" style="display:inline-block; padding:6px 12px; width:auto; text-align:center;">
-  Envoyer
-</button>
 
+    <button type="submit" style="display:inline-block; padding:6px 12px; width:auto; text-align:center;">
+      Envoyer
+    </button>
   </form>
 
   <div id="message"></div>
@@ -100,7 +95,6 @@
   </script>
 </section>
 
-<!-- ===== SURVEILLANCES & DOCUMENTS ===== -->
 <section class="calendriers">
   <div class="section-title">🗂️ Documents des Surveillances</div>
   <div class="left-links">
@@ -121,23 +115,24 @@
   </div>
 </section>
 
-<!-- ===== FOOTER ===== -->
 <footer>
   <p>Site officiel : <a href="https://fsgf.rnu.tn/" target="_blank">https://fsgf.rnu.tn/</a></p>
   <p>© 2026 Service de Planification</p>
 </footer>
 
-<!-- ===== SCRIPT MENU MOBILE ===== -->
 <script>
+  // Menu hamburger
   document.getElementById("hamburger").addEventListener("click", function() {
     document.getElementById("menu").classList.toggle("active");
   });
-</script>
 
+  // Service Worker pour PWA
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./service-worker.js')
+    .then(() => console.log('Service Worker enregistré.'))
+    .catch(err => console.log('Erreur Service Worker :', err));
+  }
+</script>
 
 </body>
 </html>
-
-
-
-
