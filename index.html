@@ -26,7 +26,8 @@
     <li><a href="surveillances.html">Surveillances</a></li>
     <li><a href="reclamations.html">Réclamations</a></li>
     <li><a href="ressources.html">Ressources</a></li>
-   <li><span id="btnAdmin" style="cursor:pointer; font-weight:bold;">Admin</span></li>
+ <li><span id="btnAdmin" style="cursor:pointer; font-weight:bold;">Admin</span></li>
+
 
   </ul>
 </nav>
@@ -63,23 +64,26 @@
   }
 </script>
 <script>
-<script>
-document.getElementById("btnAdmin").addEventListener("click", function () {
-  const login = prompt("Login administrateur :");
-  const mdp = prompt("Mot de passe :");
+document.addEventListener("DOMContentLoaded", function() {
+  const btn = document.getElementById("btnAdmin");
+  if(btn) {
+    btn.addEventListener("click", function () {
+      const login = prompt("Login administrateur :");
+      const mdp = prompt("Mot de passe :");
 
-  if (login === "@admin" && mdp === "2026") {
-    window.open("https://sghfsgf.github.io/Admin-Planification/", "_blank");
-  } else {
-    alert("Accès refusé");
+      if (login === "admin" && mdp === "FSGF2026") {
+        window.open("https://sghfsgf.github.io/Admin-Planification/", "_blank");
+      } else {
+        alert("Accès refusé");
+      }
+    });
   }
 });
 </script>
 
-</script>
-
 </body>
 </html>
+
 
 
 
