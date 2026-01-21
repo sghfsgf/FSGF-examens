@@ -1,10 +1,10 @@
 const CACHE_NAME = 'examens-cache-v1';
 const urlsToCache = [
-  '/',
-  '/index.html',
-  '/documents.html',
-  '/styles.css',
-  '/logo_ecole.png'
+  './',
+  './index.html',
+  './documents.html',
+  './styles.css',
+  './logo_ecole.png'
 ];
 
 // Installer le service worker et mettre en cache les fichiers
@@ -22,3 +22,4 @@ self.addEventListener('fetch', event => {
       .then(response => response || fetch(event.request))
   );
 });
+
