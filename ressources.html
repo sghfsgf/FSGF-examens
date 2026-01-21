@@ -7,25 +7,80 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="manifest" href="manifest.json">
   <style>
-    /* Lien actif du menu */
-    .menu a.active {
-      color: #fff;
-      background-color: #ff6600; /* orange vif */
-      border-radius: 6px;
-      padding: 6px 12px;
+    /* ===== MENU ===== */
+    .main-nav {
+      display: flex;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #ff6600; /* fond orange vif */
+      border-bottom: 1px solid #ddd;
+    }
+
+    .main-nav .logo img {
+      height: 40px;
+    }
+
+    .menu {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+      margin-left: 20px;
+      padding: 0;
     }
 
     .menu li a {
       text-decoration: none;
-      color: #ff6600; /* orange vif */
+      color: #fff; /* texte blanc sur fond orange */
       padding: 6px 12px;
       border-radius: 6px;
       font-weight: bold;
+      transition: all 0.2s;
     }
 
     .menu li a:hover {
       background-color: #ff9900; /* orange clair au survol */
       color: #fff;
+    }
+
+    .menu a.active {
+      background-color: #e65c00; /* orange foncé pour le lien actif */
+    }
+
+    /* Hamburger responsive */
+    .hamburger {
+      display: none;
+      font-size: 1.5em;
+      cursor: pointer;
+      margin-left: auto;
+      color: #fff;
+    }
+
+    @media screen and (max-width: 768px) {
+      .menu {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        margin-left: 0;
+      }
+      .menu.active {
+        display: flex;
+      }
+      .hamburger {
+        display: block;
+      }
+    }
+
+    /* Sections et titres */
+    section {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 0 20px;
+      text-align: left;
+    }
+
+    h1, h2 {
+      text-align: left;
+      margin-bottom: 10px;
     }
 
     .pdf-link {
@@ -44,63 +99,11 @@
       transform: translateY(-2px);
     }
 
-    /* Sections et titres alignés à gauche */
-    section {
-      max-width: 800px;
-      margin: 20px 0;
-      padding: 0 20px;
-      text-align: left;
-    }
-
-    h1, h2 {
-      text-align: left;
-      margin-bottom: 10px;
-    }
-
     footer {
       text-align: left;
       padding: 10px 20px;
       font-size: 0.9em;
       color: #555;
-    }
-
-    /* Menu responsive */
-    .main-nav {
-      display: flex;
-      align-items: center;
-      padding: 10px 20px;
-      background-color: #fff;
-      border-bottom: 1px solid #ddd;
-    }
-
-    .menu {
-      list-style: none;
-      display: flex;
-      gap: 15px;
-      margin-left: 20px; /* espace après logo */
-      padding: 0;
-    }
-
-    .hamburger {
-      display: none;
-      font-size: 1.5em;
-      cursor: pointer;
-      margin-left: auto;
-    }
-
-    @media screen and (max-width: 768px) {
-      .menu {
-        display: none;
-        flex-direction: column;
-        gap: 5px;
-        margin-left: 0;
-      }
-      .menu.active {
-        display: flex;
-      }
-      .hamburger {
-        display: block;
-      }
     }
   </style>
 </head>
@@ -109,13 +112,14 @@
 <!-- ===== MENU ===== -->
 <nav class="main-nav">
   <a class="logo" href="index.html">
-    <img src="logo_ecole.png" alt="Logo de l'école" style="height:40px;">
+    <img src="logo_ecole.png" alt="Logo de l'école">
   </a>
   <div class="hamburger" id="hamburger">☰</div>
   <ul class="menu" id="menu">
     <li><a href="index.html">Accueil</a></li>
     <li><a href="examens.html">Examens</a></li>
     <li><a href="surveillances.html">Surveillances</a></li>
+    <li><a href="reclamations.html" id="menu-reclamations">Réclamations</a></li>
     <li><a href="ressources.html" id="menu-ressources">Ressources</a></li>
   </ul>
 </nav>
@@ -157,27 +161,35 @@
 
 <!-- ===== SCRIPT MENU MOBILE & Lien actif ===== -->
 <script>
-// Hamburger menu
-document.getElementById("hamburger").addEventListener("click", function() {
-  document.getElementById("menu").classList.toggle("active");
-});
-
-// Lien actif
-const currentPage = location.pathname.split("/").pop();
-if(currentPage === "ressources.html") {
-  document.getElementById("menu-ressources").classList.add("active");
-}
-
-// Fermer menu mobile si lien cliqué autre que page actuelle
-document.querySelectorAll(".menu a").forEach(link => {
-  link.addEventListener("click", function(e){
-    if(link.href === location.href){
-      e.preventDefault();
-    } else {
-      document.getElementById("menu").classList.remove("active");
-    }
+  // Hamburger menu
+  document.getElementById("hamburger").addEventListener("click", function() {
+    document.getElementById("menu").classList.toggle("active");
   });
-});
+
+  // Lien actif
+  const currentPage = location.pathname.split("/").pop();
+  if(currentPage === "ressources.html") {
+    document.getElementById("menu-ressources").classList.add("active");
+  } else if(currentPage === "reclamations.html") {
+    document.getElementById("menu-reclamations").classList.add("active");
+  } else if(currentPage === "index.html") {
+    document.querySelector('a[href="index.html"]').classList.add("active");
+  } else if(currentPage === "examens.html") {
+    document.querySelector('a[href="examens.html"]').classList.add("active");
+  } else if(currentPage === "surveillances.html") {
+    document.querySelector('a[href="surveillances.html"]').classList.add("active");
+  }
+
+  // Fermer menu mobile si lien cliqué
+  document.querySelectorAll(".menu a").forEach(link => {
+    link.addEventListener("click", function(e){
+      if(link.href === location.href){
+        e.preventDefault();
+      } else {
+        document.getElementById("menu").classList.remove("active");
+      }
+    });
+  });
 </script>
 
 </body>
