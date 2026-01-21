@@ -31,27 +31,27 @@
       transform: translateY(-2px);
     }
 
-    /* Sections et titres alignés à gauche */
+    /* Sections alignées à gauche */
     section {
       max-width: 800px;
-      margin: 20px 0; /* plus auto pour ne plus centrer */
+      margin: 20px 0; /* plus auto pour ne pas centrer */
       padding: 0 20px;
       text-align: left;
     }
 
     h1, h2 {
-      text-align: left;
+      text-align: left; /* titres à gauche */
       margin-bottom: 10px;
     }
 
     footer {
-      text-align: left;
+      text-align: left; /* pied de page à gauche */
       padding: 10px 20px;
       font-size: 0.9em;
       color: #555;
     }
 
-    /* Menu responsive */
+    /* Optionnel : garder le menu fixe propre */
     .main-nav {
       display: flex;
       align-items: center;
@@ -80,6 +80,7 @@
       cursor: pointer;
     }
 
+    /* Responsive menu */
     @media screen and (max-width: 768px) {
       .menu {
         display: none;
@@ -167,13 +168,13 @@
     if(link.href === location.href) {
       link.classList.add("active");
     }
-
+    
     // Sur mobile, fermer menu seulement si on clique sur un lien autre que la page actuelle
     link.addEventListener("click", function(e) {
       if(link.href === location.href) {
-        e.preventDefault(); // empêche la fermeture / rechargement inutile
+        e.preventDefault();
       } else {
-        document.getElementById("menu").classList.remove("active"); // fermer le menu
+        document.getElementById("menu").classList.remove("active");
       }
     });
   });
