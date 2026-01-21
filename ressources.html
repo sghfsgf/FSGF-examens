@@ -107,6 +107,23 @@
     document.getElementById("menu-ressources").classList.add("active");
   }
 </script>
+// Empêche le menu de disparaître sur la page actuelle
+const menuLinks = document.querySelectorAll(".menu a");
+menuLinks.forEach(link => {
+  if(link.href === location.href) {
+    link.classList.add("active");
+  }
+  
+  // Sur mobile, fermer menu seulement si on clique sur un lien autre que la page actuelle
+  link.addEventListener("click", function(e) {
+    if(link.href === location.href) {
+      e.preventDefault(); // empêche la fermeture / rechargement inutile
+    } else {
+      document.getElementById("menu").classList.remove("active"); // fermer le menu
+    }
+  });
+});
 
 </body>
 </html>
+
