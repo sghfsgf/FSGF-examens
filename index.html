@@ -61,7 +61,20 @@
     .catch(err => console.log('Erreur Service Worker :', err));
   }
 </script>
+<script>
+function ouvrirAdmin() {
+  const login = prompt("Login administrateur :");
+  const mdp = prompt("Mot de passe :");
+
+  if (login === "@admin" && mdp === "fsgf2026") {
+    window.open("https://sghfsgf.github.io/Admin-Planification/", "_blank");
+  } else {
+    alert("Accès refusé");
+  }
+}
+</script>
 
 </body>
 </html>
+
 
