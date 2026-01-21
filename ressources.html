@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ressources – Planification des Examens</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+
+<!-- ===== MENU ===== -->
+<nav class="main-nav">
+  <a class="logo" href="index.html">
+    <img src="logo_ecole.png" alt="Logo de l'école">
+  </a>
+  <div class="hamburger" id="hamburger">☰</div>
+  <ul class="menu" id="menu">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="examens.html">Examens</a></li>
+    <li><a href="surveillances.html">Surveillances</a></li>
+    <li><a href="ressources.html">Ressources</a></li>
+  </ul>
+</nav>
+
+<header>
+  <h1>Ressources – Examens et Surveillances</h1>
+</header>
+
+<!-- ===== PDF Examens ===== -->
+<section>
+  <h2>📄 Documents des Examens</h2>
+  <a class="pdf-link" href="examens_L1.pdf" target="_blank">Licence 1</a>
+  <a class="pdf-link" href="examens_L2.pdf" target="_blank">Licence 2</a>
+  <a class="pdf-link" href="examens_L3.pdf" target="_blank">Licence 3</a>
+  <a class="pdf-link" href="examens_masters.pdf" target="_blank">Mastères</a>
+  <a class="pdf-link" href="examens_complet.pdf" target="_blank">Calendrier complet FSGF</a>
+  <a class="pdf-link" href="reglement_examens.pdf" target="_blank">Règlement des examens</a>
+</section>
+
+<!-- ===== Fichiers Excel Surveillances ===== -->
+<section>
+  <h2>📊 Fichiers Excel par Département</h2>
+  <a class="pdf-link" href="liste_enseignants.pdf" target="_blank">Liste des enseignants</a>
+  <a class="pdf-link" href="Dep_SV.xlsx" download>Département SV</a>
+  <a class="pdf-link" href="Dep_ST.xlsx" download>Département ST</a>
+  <a class="pdf-link" href="Dep_INFO.xlsx" download>Département INFO</a>
+  <a class="pdf-link" href="Dep_CH.xlsx" download>Département CH</a>
+  <a class="pdf-link" href="Dep_PHYS.xlsx" download>Département PHYS</a>
+  <a class="pdf-link" href="Dep_FT.xlsx" download>Département FT</a>
+  <a class="pdf-link" href="Dep_MATHS.xlsx" download>Département MATHS</a>
+</section>
+
+<!-- ===== Ancien formulaire Réclamations (optionnel) ===== -->
+<section>
+  <h2>Formulaire de contact / Réclamation</h2>
+  <iframe name="hidden_iframe" style="display:none;"></iframe>
+  <form method="POST"
+        action="https://script.google.com/macros/s/AKfycbzmZuz32NssQ3khol_r0nnpFeDYeTMbJwqJemW0oJL4Z93QgWE-CA7d_OfeU6s3fhNN/exec"
+        target="hidden_iframe">
+    <label>Département *</label>
+    <select name="department" required>
+      <option disabled selected value="">Choisir...</option>
+      <option value="SV">SV</option>
+      <option value="ST">ST</option>
+      <option value="INFO">INFO</option>
+      <option value="CH">CH</option>
+      <option value="PHYS">PHYS</option>
+      <option value="FT">FT</option>
+      <option value="MATHS">MATHS</option>
+      <option value="LANGUES">LANGUES</option>
+    </select>
+
+    <label>Nom de l'enseignant *</label>
+    <input type="text" name="nomEnseignant" required>
+
+    <label>Adresse e-mail *</label>
+    <input type="email" name="email" required>
+
+    <label>Type de Réclamation *</label>
+    <select name="typeReclamation" required>
+      <option disabled selected value="">Choisir...</option>
+      <option value="Demande pour le vice-doyen de la FSGF">Demande pour le vice-doyen de la FSGF</option>
+      <option value="Changer une matière dans le calendrier">Changer une matière dans le calendrier</option>
+      <option value="Permuter des matières">Permuter des matières</option>
+      <option value="Être absent pendant les jours des surveillances">Être absent pendant les jours des surveillances</option>
+      <option value="Avoir une information">Avoir une information</option>
+      <option value="Autre type de Réclamation">Autre type de Réclamation</option>
+    </select>
+
+    <label>Détails (facultatif)</label>
+    <textarea name="details" rows="4"></textarea>
+    <button type="submit">Envoyer</button>
+  </form>
+
+  <div id="message"></div>
+
+  <script>
+    document.getElementsByName("hidden_iframe")[0].addEventListener("load", function() {
+      const msg = document.getElementById("message");
+      msg.textContent = "✅ Message envoyé avec succès !";
+      msg.style.color = "green";
+      document.querySelector("form").reset();
+      setTimeout(() => msg.textContent = "", 2000);
+    });
+  </script>
+</section>
+
+<footer>
+  <p>Site officiel : <a href="https://fsgf.rnu.tn/" target="_blank">https://fsgf.rnu.tn/</a></p>
+  <p>© 2026 Service de Planification</p>
+</footer>
+
+<script>
+  document.getElementById("hamburger").addEventListener("click", function() {
+    document.getElementById("menu").classList.toggle("active");
+  });
+</script>
+
+</body>
+</html>
