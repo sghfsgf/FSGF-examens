@@ -4,7 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Accueil – Planification des Examens</title>
+
+  <!-- CSS -->
   <link rel="stylesheet" href="styles.css">
+
+  <!-- PWA manifest -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#007bff">
+  <link rel="apple-touch-icon" href="logo_ecole.png">
 </head>
 <body>
 
@@ -28,46 +35,31 @@
 </header>
 
 <!-- ===== FOOTER ===== -->
-
-  <footer>
+<footer>
   <a href="#" onclick="quitterSite()">Quitter</a> | 
   Site officiel : <a href="https://fsgf.rnu.tn/" target="_blank">https://fsgf.rnu.tn/</a> 
   | © 2026 Service de Planification
 </footer>
 
 <script>
+  // Fonction quitter
   function quitterSite() {
-    window.open('', '_self'); // ouvrir la même fenêtre
-    window.close();            // fermer la page
+    window.open('', '_self');
+    window.close();
   }
-</script>
 
-<!--footer>
-<!--  <p>Site officiel : <a href="https://fsgf.rnu.tn/" target="_blank">https://fsgf.rnu.tn/</a></p>
- <!-- <p>© 2026 Service de Planification</p>
-<!--</footer>
-<script>
-fetch("https://script.google.com/macros/s/AKfycbwWu6r4RP9XiEXaP0aHBCbjKU0Tk-nScePFWsnZ4zOtkyhWAoK4sijTDFg-Qk9wMgOKEQ/exec")
-  .then(r => r.text())
-  .then(n => {
-    document.getElementById("visites").textContent = "Visites : " + n;
-  });
-</script>
-
-
+  // Hamburger menu
   document.getElementById("hamburger").addEventListener("click", function() {
     document.getElementById("menu").classList.toggle("active");
   });
-</script>
 
- 
+  // Service Worker pour PWA
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./service-worker.js')
+    .then(() => console.log('Service Worker enregistré.'))
+    .catch(err => console.log('Erreur Service Worker :', err));
+  }
+</script>
 
 </body>
 </html>
-
-
-
-
-
-
-
