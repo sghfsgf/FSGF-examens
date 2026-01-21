@@ -389,6 +389,75 @@ form button {
     color: white;
   }
 }
+/* ===== MENU FIXE + LOGO + LIENS A GAUCHE ===== */
+nav.main-nav {
+  display: flex !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+  gap: 20px !important;
+  background-color: #ff8c00 !important;
+  padding: 12px 20px !important;
+  width: 100% !important;
+  position: fixed !important;
+  top: 0 !important;
+  z-index: 1000 !important;
+}
+
+nav.main-nav .logo {
+  margin-right: 20px !important;
+}
+
+nav.main-nav ul.menu {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 20px !important;
+  margin: 0 !important;
+  padding-left: 0 !important;
+}
+
+nav.main-nav ul.menu li a {
+  color: black !important;
+  font-weight: bold !important;
+  padding: 8px 12px !important;
+}
+
+/* ===== HAMBURGER ===== */
+nav.main-nav .hamburger {
+  display: none !important;
+  font-size: 28px !important;
+  cursor: pointer !important;
+  color: white !important;
+}
+
+/* ===== RESPONSIVE MOBILE ===== */
+@media screen and (max-width: 768px) {
+  nav.main-nav .hamburger {
+    display: block !important;
+    margin-left: auto !important;
+  }
+
+  nav.main-nav ul.menu {
+    display: none !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    position: absolute !important;
+    top: 60px !important;
+    left: 0 !important;
+    background-color: #ff8c00 !important;
+    padding: 10px 0 !important;
+  }
+
+  nav.main-nav ul.menu.active {
+    display: flex !important;
+  }
+
+  nav.main-nav ul.menu li a {
+    color: white !important;
+    padding: 12px 20px !important;
+    border-top: 1px solid #e07b00 !important;
+  }
+}
+
 
 
 
