@@ -21,13 +21,14 @@ body {
   padding: 12px 20px;
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* logo + liens à gauche */
+  justify-content: flex-start; /* tout aligné à gauche */
   gap: 20px;                   /* espace entre logo et liens */
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
 }
+
 
 .main-nav .logo img {
   height: 40px;
@@ -292,5 +293,6 @@ form button {
   font-size: 1rem;
   padding: 8px;
 }
+
 
 
