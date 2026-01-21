@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -11,7 +9,7 @@
   <style>
     /* Lien actif du menu */
     .menu a.active {
-      color: #fff; /* texte blanc */
+      color: #fff;
       background-color: #ff6600; /* orange vif */
       border-radius: 6px;
       padding: 6px 12px;
@@ -19,9 +17,10 @@
 
     .menu li a {
       text-decoration: none;
-      color: #ff6600; /* orange vif pour les liens normaux */
+      color: #ff6600; /* orange vif */
       padding: 6px 12px;
       border-radius: 6px;
+      font-weight: bold;
     }
 
     .menu li a:hover {
@@ -70,7 +69,7 @@
       display: flex;
       align-items: center;
       padding: 10px 20px;
-      background-color: #f8f8f8;
+      background-color: #fff;
       border-bottom: 1px solid #ddd;
     }
 
@@ -78,13 +77,15 @@
       list-style: none;
       display: flex;
       gap: 15px;
-      margin-left: auto;
+      margin-left: 20px; /* espace après logo */
+      padding: 0;
     }
 
     .hamburger {
       display: none;
       font-size: 1.5em;
       cursor: pointer;
+      margin-left: auto;
     }
 
     @media screen and (max-width: 768px) {
@@ -108,7 +109,7 @@
 <!-- ===== MENU ===== -->
 <nav class="main-nav">
   <a class="logo" href="index.html">
-    <img src="logo_ecole.png" alt="Logo de l'école">
+    <img src="logo_ecole.png" alt="Logo de l'école" style="height:40px;">
   </a>
   <div class="hamburger" id="hamburger">☰</div>
   <ul class="menu" id="menu">
@@ -156,33 +157,27 @@
 
 <!-- ===== SCRIPT MENU MOBILE & Lien actif ===== -->
 <script>
-  // Hamburger menu
-  document.getElementById("hamburger").addEventListener("click", function() {
-    document.getElementById("menu").classList.toggle("active");
-  });
+// Hamburger menu
+document.getElementById("hamburger").addEventListener("click", function() {
+  document.getElementById("menu").classList.toggle("active");
+});
 
-  // Lien actif selon page
-  const currentPage = location.pathname.split("/").pop();
-  if(currentPage === "ressources.html") {
-    document.getElementById("menu-ressources").classList.add("active");
-  }
+// Lien actif
+const currentPage = location.pathname.split("/").pop();
+if(currentPage === "ressources.html") {
+  document.getElementById("menu-ressources").classList.add("active");
+}
 
-  // Empêche le menu de disparaître sur la page actuelle
-  const menuLinks = document.querySelectorAll(".menu a");
-  menuLinks.forEach(link => {
-    if(link.href === location.href) {
-      link.classList.add("active");
+// Fermer menu mobile si lien cliqué autre que page actuelle
+document.querySelectorAll(".menu a").forEach(link => {
+  link.addEventListener("click", function(e){
+    if(link.href === location.href){
+      e.preventDefault();
+    } else {
+      document.getElementById("menu").classList.remove("active");
     }
-
-    // Sur mobile, fermer menu seulement si on clique sur un lien autre que la page actuelle
-    link.addEventListener("click", function(e) {
-      if(link.href === location.href) {
-        e.preventDefault(); // empêche la fermeture / rechargement inutile
-      } else {
-        document.getElementById("menu").classList.remove("active"); // fermer le menu
-      }
-    });
   });
+});
 </script>
 
 </body>
