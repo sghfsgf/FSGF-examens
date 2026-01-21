@@ -31,14 +31,68 @@
       transform: translateY(-2px);
     }
 
+    /* Sections et titres alignés à gauche */
     section {
       max-width: 800px;
-      margin: 20px auto;
+      margin: 20px 0; /* plus auto pour ne plus centrer */
       padding: 0 20px;
+      text-align: left;
     }
 
     h1, h2 {
-      text-align: center;
+      text-align: left;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      text-align: left;
+      padding: 10px 20px;
+      font-size: 0.9em;
+      color: #555;
+    }
+
+    /* Menu responsive */
+    .main-nav {
+      display: flex;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #f8f8f8;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .menu {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+      margin-left: auto;
+    }
+
+    .menu li a {
+      text-decoration: none;
+      color: #333;
+      padding: 6px 12px;
+      border-radius: 6px;
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 1.5em;
+      cursor: pointer;
+    }
+
+    @media screen and (max-width: 768px) {
+      .menu {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        margin-left: 0;
+      }
+      .menu.active {
+        display: flex;
+      }
+      .hamburger {
+        display: block;
+      }
     }
   </style>
 </head>
@@ -106,24 +160,24 @@
   if(currentPage === "ressources.html") {
     document.getElementById("menu-ressources").classList.add("active");
   }
-</script>
-// Empêche le menu de disparaître sur la page actuelle
-const menuLinks = document.querySelectorAll(".menu a");
-menuLinks.forEach(link => {
-  if(link.href === location.href) {
-    link.classList.add("active");
-  }
-  
-  // Sur mobile, fermer menu seulement si on clique sur un lien autre que la page actuelle
-  link.addEventListener("click", function(e) {
+
+  // Empêche le menu de disparaître sur la page actuelle
+  const menuLinks = document.querySelectorAll(".menu a");
+  menuLinks.forEach(link => {
     if(link.href === location.href) {
-      e.preventDefault(); // empêche la fermeture / rechargement inutile
-    } else {
-      document.getElementById("menu").classList.remove("active"); // fermer le menu
+      link.classList.add("active");
     }
+
+    // Sur mobile, fermer menu seulement si on clique sur un lien autre que la page actuelle
+    link.addEventListener("click", function(e) {
+      if(link.href === location.href) {
+        e.preventDefault(); // empêche la fermeture / rechargement inutile
+      } else {
+        document.getElementById("menu").classList.remove("active"); // fermer le menu
+      }
+    });
   });
-});
+</script>
 
 </body>
 </html>
-
