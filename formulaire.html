@@ -20,63 +20,20 @@
       border-radius: 10px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
-    h2 {
-      text-align: center;
-      color: #333;
-      margin-bottom: 20px;
-    }
-    label {
-      display: block;
-      margin-top: 10px;
-      font-weight: bold;
-      color: #555;
-    }
-    input, select {
-      width: 100%;
-      padding: 8px;
-      margin-top: 5px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      box-sizing: border-box;
-    }
-    button {
-      width: 100%;
-      padding: 12px;
-      font-size: 16px;
-      font-weight: bold;
-      color: #fff;
-      background: linear-gradient(135deg, #007BFF, #0056b3);
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-    button:hover {
-      background: linear-gradient(135deg, #0056b3, #003f7f);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
-    .home-link {
-      text-align: center;
-      margin-top: 15px;
-    }
-    .home-link a {
-      display: inline-block;
-      padding: 10px 25px;
-      background-color: #28a745;
-      color: white;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 8px;
-      transition: all 0.3s ease;
-    }
-    .home-link a:hover {
-      background-color: #218838;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
+    h2 { text-align: center; color: #333; margin-bottom: 20px; }
+    label { display: block; margin-top: 10px; font-weight: bold; color: #555; }
+    input, select { width: 100%; padding: 8px; margin-top: 5px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; }
+    button { width: 100%; padding: 12px; font-size: 16px; font-weight: bold; color: #fff; background: linear-gradient(135deg, #007BFF, #0056b3); border: none; border-radius: 8px; cursor: pointer; transition: all 0.3s ease; }
+    button:hover { background: linear-gradient(135deg, #0056b3, #003f7f); transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
+    .home-link { text-align: center; margin-top: 15px; }
+    .home-link a { display: inline-block; padding: 10px 25px; background-color: #28a745; color: white; font-weight: bold; text-decoration: none; border-radius: 8px; transition: all 0.3s ease; }
+    .home-link a:hover { background-color: #218838; transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
   </style>
+
+  <!-- PWA manifest -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#007bff">
+  <link rel="apple-touch-icon" href="logo_ecole.png">
 </head>
 
 <body>
@@ -84,15 +41,12 @@
   <form id="choixForm">
     <h2>Choix du jour de surveillance</h2>
 
-    <!-- Nom et prénom -->
     <label for="enseignant">Nom et prénom</label>
     <input type="text" id="enseignant" placeholder="مثال: محمد بن محمد" dir="rtl" lang="ar" required>
 
-    <!-- Email -->
     <label for="email">Email :</label>
     <input type="email" id="email" placeholder="exemple@fsgf.tn" required>
 
-    <!-- Département -->
     <label for="dept">Département :</label>
     <select id="dept" required>
       <option value="">Choisir département</option>
@@ -106,7 +60,6 @@
       <option value="LANGUES">LANGUES</option>
     </select>
 
-    <!-- Jour -->
     <label for="jour">Jour :</label>
     <select id="jour" required>
       <option value="">Choisir jour</option>
@@ -118,16 +71,15 @@
       <option value="J6">J6</option>
     </select>
 
-    <!-- Bouton Valider -->
     <button type="submit">Valider</button>
 
-    <!-- Bouton Page d'accueil -->
     <div class="home-link">
       <a href="index.html">Page d'accueil</a>
     </div>
   </form>
 
   <script>
+    // Gestion du formulaire
     document.getElementById("choixForm").addEventListener("submit", async function(e){
       e.preventDefault();
 
@@ -144,23 +96,26 @@
           {
             method: "POST",
             body: JSON.stringify(data),
-            headers: {
-              "Content-Type": "application/json"
-            }
+            headers: { "Content-Type": "application/json" }
           }
         );
 
         const message = await res.text();
         alert(message);
         e.target.reset();
-
       } catch(err){
         console.error(err);
         alert("Erreur de connexion, réessayez plus tard.");
       }
     });
-  </script>
 
+    // Service Worker pour PWA
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('./service-worker.js')
+      .then(() => console.log('Service Worker enregistré.'))
+      .catch(err => console.log('Erreur Service Worker :', err));
+    }
+  </script>
 
 </body>
 </html>
