@@ -6,6 +6,41 @@
   <title>Ressources – Planification des Examens</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="manifest" href="manifest.json">
+  <style>
+    /* Lien actif du menu */
+    .menu a.active {
+      color: #fff;
+      background-color: #007bff;
+      border-radius: 6px;
+      padding: 6px 12px;
+    }
+
+    .pdf-link {
+      display: block;
+      padding: 10px;
+      margin: 5px 0;
+      background: #f1f1f1;
+      border-radius: 6px;
+      text-decoration: none;
+      color: #007bff;
+      transition: all 0.2s;
+    }
+
+    .pdf-link:hover {
+      background: #e1e1e1;
+      transform: translateY(-2px);
+    }
+
+    section {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 0 20px;
+    }
+
+    h1, h2 {
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
 
@@ -19,10 +54,12 @@
     <li><a href="index.html">Accueil</a></li>
     <li><a href="examens.html">Examens</a></li>
     <li><a href="surveillances.html">Surveillances</a></li>
-    <li><a href="reclamations.html">Réclamations</a></li> <!-- ajouté -->
+    <li><a href="ressources.html" id="menu-ressources">Ressources</a></li>
+    <li><a href="reclamations.html" id="menu-reclamations">Réclamations</a></li>
   </ul>
 </nav>
 
+<!-- ===== HEADER ===== -->
 <header>
   <h1>Ressources – Examens et Surveillances</h1>
 </header>
@@ -51,15 +88,24 @@
   <a class="pdf-link" href="Dep_MATHS.xlsx" download>Département MATHS</a>
 </section>
 
+<!-- ===== FOOTER ===== -->
 <footer>
   <p>Site officiel : <a href="https://fsgf.rnu.tn/" target="_blank">https://fsgf.rnu.tn/</a></p>
   <p>© 2026 Service de Planification</p>
 </footer>
 
+<!-- ===== SCRIPT MENU MOBILE & Lien actif ===== -->
 <script>
+  // Hamburger menu
   document.getElementById("hamburger").addEventListener("click", function() {
     document.getElementById("menu").classList.toggle("active");
   });
+
+  // Lien actif selon page
+  const currentPage = location.pathname.split("/").pop();
+  if(currentPage === "ressources.html") {
+    document.getElementById("menu-ressources").classList.add("active");
+  }
 </script>
 
 </body>
