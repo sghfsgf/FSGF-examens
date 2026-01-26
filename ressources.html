@@ -6,82 +6,32 @@
   <title>Ressources – Planification des Examens</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="manifest" href="manifest.json">
+
   <style>
     /* ===== MENU ===== */
     .main-nav {
       display: flex;
       align-items: center;
       padding: 10px 20px;
-      background-color: #ff6600; /* fond orange vif */
+      background-color: #ff6600;
       border-bottom: 1px solid #ddd;
     }
+    .main-nav .logo img { height: 40px; }
+    .menu { list-style: none; display: flex; gap: 15px; margin-left: 20px; padding: 0; }
+    .menu li a { text-decoration: none; color: #fff; padding: 6px 12px; border-radius: 6px; font-weight: bold; transition: all 0.2s; }
+    .menu li a:hover { background-color: #ff9900; color: #fff; }
+    .menu a.active { background-color: #e65c00; }
 
-    .main-nav .logo img {
-      height: 40px;
-    }
-
-    .menu {
-      list-style: none;
-      display: flex;
-      gap: 15px;
-      margin-left: 20px;
-      padding: 0;
-    }
-
-    .menu li a {
-      text-decoration: none;
-      color: #fff; /* texte blanc sur fond orange */
-      padding: 6px 12px;
-      border-radius: 6px;
-      font-weight: bold;
-      transition: all 0.2s;
-    }
-
-    .menu li a:hover {
-      background-color: #ff9900; /* orange clair au survol */
-      color: #fff;
-    }
-
-    .menu a.active {
-      background-color: #e65c00; /* orange foncé pour le lien actif */
-    }
-
-    /* Hamburger responsive */
-    .hamburger {
-      display: none;
-      font-size: 1.5em;
-      cursor: pointer;
-      margin-left: auto;
-      color: #fff;
-    }
-
+    .hamburger { display: none; font-size: 1.5em; cursor: pointer; margin-left: auto; color: #fff; }
     @media screen and (max-width: 768px) {
-      .menu {
-        display: none;
-        flex-direction: column;
-        gap: 5px;
-        margin-left: 0;
-      }
-      .menu.active {
-        display: flex;
-      }
-      .hamburger {
-        display: block;
-      }
+      .menu { display: none; flex-direction: column; gap: 5px; margin-left: 0; }
+      .menu.active { display: flex; }
+      .hamburger { display: block; }
     }
 
     /* Sections et titres alignés à gauche */
-    section {
-      max-width: 800px;   /* largeur max du contenu */
-      margin: 20px 0;     /* supprime le centrage horizontal */
-      padding: 0 20px;
-      text-align: left;   /* texte et liens alignés à gauche */
-    }
-
-    h1, h2 {
-      text-align: left;
-      margin-bottom: 10px;
-    }
+    section { max-width: 800px; margin: 20px 0; padding: 0 20px; text-align: left; }
+    h1, h2 { text-align: left; margin-bottom: 10px; }
 
     .pdf-link {
       display: block;
@@ -93,30 +43,23 @@
       color: #007bff;
       transition: all 0.2s;
     }
-
-    .pdf-link:hover {
-      background: #e1e1e1;
-      transform: translateY(-2px);
-    }
+    .pdf-link:hover { background: #e1e1e1; transform: translateY(-2px); }
 
     footer {
-  width: 100%;
-  text-align: center;     /* texte centré */
-  padding: 20px 0;        /* espace vertical */
-  font-size: 0.9em;
-  color: #fff;            /* texte blanc */
-  background-color: #007bff; /* bleu vif */
-}
-
+      width: 100%;
+      text-align: center;
+      padding: 20px 0;
+      font-size: 0.9em;
+      color: #fff;
+      background-color: #007bff;
+    }
   </style>
 </head>
 <body>
 
 <!-- ===== MENU ===== -->
 <nav class="main-nav">
-  <a class="logo" href="index.html">
-    <img src="logo_ecole.png" alt="Logo de l'école">
-  </a>
+  <a class="logo" href="index.html"><img src="logo_ecole.png" alt="Logo de l'école"></a>
   <div class="hamburger" id="hamburger">☰</div>
   <ul class="menu" id="menu">
     <li><a href="index.html">Accueil</a></li>
@@ -124,7 +67,7 @@
     <li><a href="surveillances.html">Surveillances</a></li>
     <li><a href="reclamations.html" id="menu-reclamations">Réclamations</a></li>
     <li><a href="ressources.html" id="menu-ressources">Ressources</a></li>
-     <li><a href="#" onclick="ouvrirAdmin()">Admin</a></li>
+    <li><a href="#" onclick="ouvrirAdmin()">Admin</a></li>
   </ul>
 </nav>
 
@@ -133,15 +76,12 @@
   <h1>Ressources – Examens et Surveillances</h1>
 </header>
 
-<!-- ===== PDF Examens ===== -->
+<!-- ===== PDF Examens Dynamiques ===== -->
 <section>
   <h2>📄 Documents des Examens</h2>
-  <a class="pdf-link" href="examens_L1.pdf" target="_blank">Licence 1</a>
-  <a class="pdf-link" href="examens_L2.pdf" target="_blank">Licence 2</a>
-  <a class="pdf-link" href="examens_L3.pdf" target="_blank">Licence 3</a>
-  <a class="pdf-link" href="examens_masters.pdf" target="_blank">Mastères</a>
-  <a class="pdf-link" href="examens_complet.pdf" target="_blank">Calendrier complet FSGF</a>
-  <a class="pdf-link" href="reglement_examens.pdf" target="_blank">Règlement des examens</a>
+  <div id="pdfList">
+    <!-- PDFs ajoutés depuis Google Sheet apparaîtront ici -->
+  </div>
 </section>
 
 <!-- ===== Fichiers Excel Surveillances ===== -->
@@ -187,16 +127,49 @@
   // Fermer menu mobile si lien cliqué
   document.querySelectorAll(".menu a").forEach(link => {
     link.addEventListener("click", function(e){
-      if(link.href === location.href){
-        e.preventDefault();
-      } else {
-        document.getElementById("menu").classList.remove("active");
-      }
+      if(link.href === location.href){ e.preventDefault(); }
+      else { document.getElementById("menu").classList.remove("active"); }
     });
   });
 </script>
 
+<!-- ===== Tabletop.js pour Google Sheet ===== -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Tabletop.js/1.5.4/tabletop.min.js"></script>
+<script>
+  // Google Sheet public des PDFs
+  const PDF_SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQJxlIxhVoOahbHAcGuVrp3YV3AZcnT6l-Fup6ihWn8WmsbpsAo2QpAdp5EGFVa7mOHtj3IjXS0Kf8d/pubhtml";
+
+  function loadPDFs() {
+    Tabletop.init({
+      key: PDF_SHEET_URL,
+      simpleSheet: true,
+      callback: function(data) {
+        const container = document.getElementById('pdfList');
+        container.innerHTML = "";
+
+        data.forEach(item => {
+          const a = document.createElement('a');
+          a.className = "pdf-link";
+          a.href = item.Lien;
+          a.target = "_blank";
+          a.textContent = item.Nom;
+
+          if(item.Description) {
+            const span = document.createElement('span');
+            span.textContent = " – " + item.Description;
+            span.style.fontWeight = "normal";
+            span.style.color = "#555";
+            a.appendChild(span);
+          }
+
+          container.appendChild(a);
+        });
+      }
+    });
+  }
+
+  window.addEventListener('DOMContentLoaded', loadPDFs);
+</script>
+
 </body>
 </html>
-
-
