@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ressources – Planification des Examens</title>
+
   <link rel="stylesheet" href="styles.css">
   <link rel="manifest" href="manifest.json">
 
@@ -16,22 +17,67 @@
       background-color: #ff6600;
       border-bottom: 1px solid #ddd;
     }
-    .main-nav .logo img { height: 40px; }
-    .menu { list-style: none; display: flex; gap: 15px; margin-left: 20px; padding: 0; }
-    .menu li a { text-decoration: none; color: #fff; padding: 6px 12px; border-radius: 6px; font-weight: bold; transition: all 0.2s; }
-    .menu li a:hover { background-color: #ff9900; color: #fff; }
-    .menu a.active { background-color: #e65c00; }
 
-    .hamburger { display: none; font-size: 1.5em; cursor: pointer; margin-left: auto; color: #fff; }
-    @media screen and (max-width: 768px) {
-      .menu { display: none; flex-direction: column; gap: 5px; margin-left: 0; }
-      .menu.active { display: flex; }
-      .hamburger { display: block; }
+    .main-nav .logo img {
+      height: 40px;
     }
 
-    /* Sections et titres alignés à gauche */
-    section { max-width: 800px; margin: 20px 0; padding: 0 20px; text-align: left; }
-    h1, h2 { text-align: left; margin-bottom: 10px; }
+    .menu {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+      margin-left: 20px;
+      padding: 0;
+    }
+
+    .menu li a {
+      text-decoration: none;
+      color: #fff;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: all 0.2s;
+    }
+
+    .menu li a:hover {
+      background-color: #ff9900;
+    }
+
+    .menu a.active {
+      background-color: #e65c00;
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 1.5em;
+      cursor: pointer;
+      margin-left: auto;
+      color: #fff;
+    }
+
+    @media screen and (max-width: 768px) {
+      .menu {
+        display: none;
+        flex-direction: column;
+      }
+      .menu.active {
+        display: flex;
+      }
+      .hamburger {
+        display: block;
+      }
+    }
+
+    section {
+      max-width: 800px;
+      margin: 20px 0;
+      padding: 0 20px;
+      text-align: left;
+    }
+
+    h1, h2 {
+      margin-bottom: 10px;
+    }
 
     .pdf-link {
       display: block;
@@ -43,7 +89,11 @@
       color: #007bff;
       transition: all 0.2s;
     }
-    .pdf-link:hover { background: #e1e1e1; transform: translateY(-2px); }
+
+    .pdf-link:hover {
+      background: #e1e1e1;
+      transform: translateY(-2px);
+    }
 
     footer {
       width: 100%;
@@ -55,12 +105,17 @@
     }
   </style>
 </head>
+
 <body>
 
 <!-- ===== MENU ===== -->
 <nav class="main-nav">
-  <a class="logo" href="index.html"><img src="logo_ecole.png" alt="Logo de l'école"></a>
+  <a class="logo" href="index.html">
+    <img src="logo_ecole.png" alt="Logo de l'école">
+  </a>
+
   <div class="hamburger" id="hamburger">☰</div>
+
   <ul class="menu" id="menu">
     <li><a href="index.html">Accueil</a></li>
     <li><a href="examens.html">Examens</a></li>
@@ -76,17 +131,22 @@
   <h1>Ressources – Examens et Surveillances</h1>
 </header>
 
-<!-- ===== PDF Examens Dynamiques ===== -->
+<!-- ===== PDF EXAMENS ===== -->
 <section>
   <h2>📄 Documents des Examens</h2>
-  <div id="pdfList">
-    <!-- PDFs ajoutés depuis Google Sheet apparaîtront ici -->
-  </div>
+
+  <a class="pdf-link" href="examens_L1.pdf" target="_blank">Licence 1</a>
+  <a class="pdf-link" href="examens_L2.pdf" target="_blank">Licence 2</a>
+  <a class="pdf-link" href="examens_L3.pdf" target="_blank">Licence 3</a>
+  <a class="pdf-link" href="examens_masters.pdf" target="_blank">Mastères</a>
+  <a class="pdf-link" href="examens_complet.pdf" target="_blank">Calendrier complet FSGF</a>
+  <a class="pdf-link" href="reglement_examens.pdf" target="_blank">Règlement des examens</a>
 </section>
 
-<!-- ===== Fichiers Excel Surveillances ===== -->
+<!-- ===== FICHIERS SURVEILLANCES ===== -->
 <section>
   <h2>📊 Fichiers Excel par Département</h2>
+
   <a class="pdf-link" href="liste_enseignants.pdf" target="_blank">Liste des enseignants</a>
   <a class="pdf-link" href="Dep_SV.xlsx" download>Département SV</a>
   <a class="pdf-link" href="Dep_ST.xlsx" download>Département ST</a>
@@ -99,76 +159,26 @@
 
 <!-- ===== FOOTER ===== -->
 <footer>
-  <p>Site officiel : <a href="https://fsgf.rnu.tn/" target="_blank">https://fsgf.rnu.tn/</a></p>
+  <p>Site officiel :
+    <a href="https://fsgf.rnu.tn/" target="_blank" style="color:#fff;">
+      https://fsgf.rnu.tn/
+    </a>
+  </p>
   <p>© 2026 Service de Planification</p>
 </footer>
 
-<!-- ===== SCRIPT MENU MOBILE & Lien actif ===== -->
+<!-- ===== SCRIPTS ===== -->
 <script>
-  // Hamburger menu
-  document.getElementById("hamburger").addEventListener("click", function() {
+  document.getElementById("hamburger").addEventListener("click", function () {
     document.getElementById("menu").classList.toggle("active");
   });
 
-  // Lien actif
-  const currentPage = location.pathname.split("/").pop();
-  if(currentPage === "ressources.html") {
-    document.getElementById("menu-ressources").classList.add("active");
-  } else if(currentPage === "reclamations.html") {
-    document.getElementById("menu-reclamations").classList.add("active");
-  } else if(currentPage === "index.html") {
-    document.querySelector('a[href="index.html"]').classList.add("active");
-  } else if(currentPage === "examens.html") {
-    document.querySelector('a[href="examens.html"]').classList.add("active");
-  } else if(currentPage === "surveillances.html") {
-    document.querySelector('a[href="surveillances.html"]').classList.add("active");
-  }
-
-  // Fermer menu mobile si lien cliqué
-  document.querySelectorAll(".menu a").forEach(link => {
-    link.addEventListener("click", function(e){
-      if(link.href === location.href){ e.preventDefault(); }
-      else { document.getElementById("menu").classList.remove("active"); }
-    });
-  });
-</script>
-
-<!-- ===== Tabletop.js pour Google Sheet ===== -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Tabletop.js/1.5.4/tabletop.min.js"></script>
-<script>
-  // Google Sheet public des PDFs
-  const PDF_SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQJxlIxhVoOahbHAcGuVrp3YV3AZcnT6l-Fup6ihWn8WmsbpsAo2QpAdp5EGFVa7mOHtj3IjXS0Kf8d/pubhtml";
-
-  function loadPDFs() {
-    Tabletop.init({
-      key: PDF_SHEET_URL,
-      simpleSheet: true,
-      callback: function(data) {
-        const container = document.getElementById('pdfList');
-        container.innerHTML = "";
-
-        data.forEach(item => {
-          const a = document.createElement('a');
-          a.className = "pdf-link";
-          a.href = item.Lien;
-          a.target = "_blank";
-          a.textContent = item.Nom;
-
-          if(item.Description) {
-            const span = document.createElement('span');
-            span.textContent = " – " + item.Description;
-            span.style.fontWeight = "normal";
-            span.style.color = "#555";
-            a.appendChild(span);
-          }
-
-          container.appendChild(a);
-        });
-      }
-    });
-  }
-
-  window.addEventListener('DOMContentLoaded', loadPDFs);
+  const page = location.pathname.split("/").pop();
+  const map = {
+    "ressources.html": "menu-ressources",
+    "reclamations.html": "menu-reclamations"
+  };
+  if (map[page]) document.getElementById(map[page]).classList.add("active");
 </script>
 
 </body>
