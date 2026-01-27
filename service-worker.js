@@ -30,6 +30,7 @@ const urlsToCache = [
 
 // Installer le service worker et mettre en cache tous les fichiers
 self.addEventListener('install', event => {
+  self.skipWaiting(); 
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then(cache => cache.addAll(urlsToCache))
@@ -55,3 +56,4 @@ self.addEventListener('fetch', event => {
       .then(response => response || fetch(event.request))
   );
 });
+
