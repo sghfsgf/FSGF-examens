@@ -303,7 +303,7 @@ img, iframe {
 
 /* ===== MESSAGE DÉFILANT SANS FOND ===== */
 .scrolling-message {
-  position: fixed;
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
@@ -331,3 +331,4 @@ img, iframe {
     transform: translateX(-100%);
   }
 }
+
