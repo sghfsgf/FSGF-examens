@@ -1,4 +1,4 @@
-/* ===================================================
+8/* ===================================================
    TYPOGRAPHIE GLOBALE
    =================================================== */
 html {
@@ -301,34 +301,10 @@ img, iframe {
 }
 
 /* ===== MESSAGE DÉFILANT SANS FOND (SÛR MOBILE) ===== */
-.scrolling-message {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  white-space: nowrap;
-  z-index: 10;              /* ← BAISSÉ */
-  pointer-events: none;    /* ← garde le site cliquable */
-}
 
-.scrolling-message span {
-  display: inline-block;
-  padding-left: 100%;
-  font-size: 1rem;
-  font-weight: bold;
-  color: #8B0000; /* rouge brique */
-  animation: scroll-text 20s linear infinite; /* un peu plus lent */
-  will-change: transform;  /* optimisation mobile */
-}
 
-/* Animation */
-@keyframes scroll-text {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-100%);
-  }
-}
+
+
 
 
 
