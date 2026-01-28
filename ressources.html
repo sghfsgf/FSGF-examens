@@ -9,68 +9,58 @@
   <link rel="manifest" href="manifest.json">
 
   <style>
-    /* ===== MENU ===== */
-    .main-nav {
-      display: flex;
-      align-items: center;
-      padding: 10px 20px;
-      background-color: #ff6600;
-      border-bottom: 1px solid #ddd;
+    /* ===== MENU SPÉCIFIQUE RESSOURCES ===== */
+    body.ressources-page .main-nav {
+      background-color: #ff8c00; /* orange vif */
+      border-bottom: 2px solid #e07b00; /* trait horizontal */
+      z-index: 1000;
     }
 
-    .main-nav .logo img {
-      height: 40px;
-    }
-
-    .menu {
-      list-style: none;
-      display: flex;
-      gap: 15px;
-      margin-left: 20px;
-      padding: 0;
-    }
-
-    .menu li a {
-      text-decoration: none;
-      color: #fff;
-      padding: 6px 12px;
-      border-radius: 6px;
-      font-weight: bold;
-      transition: all 0.2s;
-    }
-
-    .menu li a:hover {
-      background-color: #ff9900;
-    }
-
-    .menu a.active {
-      background-color: #e65c00;
-    }
-
-    .hamburger {
-      display: none;
-      font-size: 1.5em;
-      cursor: pointer;
-      margin-left: auto;
+    body.ressources-page .menu li a {
+      border-bottom: 1px solid #e07b00; /* traits horizontaux entre liens */
       color: #fff;
     }
 
+    body.ressources-page .menu li a:hover,
+    body.ressources-page .menu li a.active {
+      background-color: #e07b00;
+    }
+
+    /* Hamburger spécifique */
     @media screen and (max-width: 768px) {
-      .menu {
+      body.ressources-page .menu {
         display: none;
         flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #ff8c00;
+        border-top: 2px solid #e07b00;
+        z-index: 1001;
       }
-      .menu.active {
+
+      body.ressources-page .menu.active {
         display: flex;
       }
-      .hamburger {
+
+      body.ressources-page .menu li a {
+        border-top: 1px solid #e07b00;
+      }
+
+      body.ressources-page .hamburger {
         display: block;
+        font-size: 1.5em;
+        cursor: pointer;
+        color: #fff;
+        margin-left: auto;
       }
     }
 
+    /* Sections et PDF links */
     section {
       max-width: 800px;
-      margin: 20px 0;
+      margin: 20px auto;
       padding: 0 20px;
       text-align: left;
     }
@@ -106,7 +96,7 @@
   </style>
 </head>
 
-<body>
+<body class="ressources-page">
 
 <!-- ===== MENU ===== -->
 <nav class="main-nav">
@@ -169,10 +159,12 @@
 
 <!-- ===== SCRIPTS ===== -->
 <script>
+  // Hamburger menu
   document.getElementById("hamburger").addEventListener("click", function () {
     document.getElementById("menu").classList.toggle("active");
   });
 
+  // Mettre le lien actif
   const page = location.pathname.split("/").pop();
   const map = {
     "ressources.html": "menu-ressources",
