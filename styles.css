@@ -304,8 +304,9 @@ img, iframe {
 
 /* ===== CORRECTION TITRE ACCUEIL SOUS MENU FIXE ===== */
 body.accueil-page header {
-  margin-top: 90px; /* ajuste selon la hauteur du menu */
+  margin-top: 120px; /* ajuste selon la hauteur du menu */
 }
+
 
 
 
