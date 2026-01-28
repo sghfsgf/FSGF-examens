@@ -211,7 +211,7 @@ footer a {
 @media screen and (max-width: 768px) {
   .hamburger {
     display: block;
-    margin-left: auto;
+    margin-left: 10px;
   }
 
   .menu {
@@ -299,3 +299,4 @@ img, iframe {
   max-width: 100%;
   height: auto;
 }
+
