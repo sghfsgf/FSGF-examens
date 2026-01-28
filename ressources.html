@@ -27,35 +27,41 @@
     }
 
     /* Hamburger spécifique */
-    @media screen and (max-width: 768px) {
-      body.ressources-page .menu {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        background-color: #ff8c00;
-        border-top: 2px solid #e07b00;
-        z-index: 1001;
-      }
+@media screen and (max-width: 768px) {
+  /* Menu déroulant mobile */
+  body.ressources-page .menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: #ff8c00;
+    border-top: 2px solid #e07b00;
+    z-index: 1001;
+  }
 
-      body.ressources-page .menu.active {
-        display: flex;
-      }
+  body.ressources-page .menu.active {
+    display: flex; /* ouvre le menu */
+  }
 
-      body.ressources-page .menu li a {
-        border-top: 1px solid #e07b00;
-      }
+  /* Bordure à gauche pour chaque lien (traits verticaux) */
+  body.ressources-page .menu li a {
+    border-left: 3px solid #e07b00; /* <-- trait vertical à gauche */
+    padding-left: 12px;             /* espace entre trait et texte */
+    border-top: none;                /* supprime le trait horizontal */
+  }
 
-      body.ressources-page .hamburger {
-        display: block;
-        font-size: 1.5em;
-        cursor: pointer;
-        color: #fff;
-        margin-left: auto;
-      }
-    }
+  /* Hamburger ☰ placé à gauche du logo */
+  body.ressources-page .hamburger {
+    display: block;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: #fff;
+    margin-left: 10px; /* <-- ici le hamburger est juste après le logo */
+  }
+}
+
 
     /* Sections et PDF links */
     section {
@@ -175,4 +181,5 @@
 
 </body>
 </html>
+
 
