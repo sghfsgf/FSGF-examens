@@ -309,7 +309,7 @@ img, iframe {
   width: 100%;
   overflow: hidden;       /* cache ce qui dépasse */
   position: relative;
-  margin-top: 30px;       /* espace sous le menu */
+  margin-top: 40px;       /* espace sous le menu */
   height: 2em;            /* hauteur du conteneur */
 }
 
@@ -338,6 +338,7 @@ img, iframe {
 body.accueil-page header {
   margin-top: 100px; /* ajuste selon la hauteur du menu */
 }
+
 
 
 
