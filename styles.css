@@ -302,10 +302,43 @@ img, iframe {
 
 /* ===== MESSAGE DÉFILANT SANS FOND (SÛR MOBILE) ===== */
 
+/* ========================
+   Texte défilant sous le menu
+   ======================== */
+.marquee-container {
+  width: 100%;
+  overflow: hidden;       /* cache ce qui dépasse */
+  position: relative;
+  margin-top: 10px;       /* espace sous le menu */
+  height: 2em;            /* hauteur du conteneur */
+}
+
+.marquee-text {
+  display: inline-block;
+  white-space: nowrap;
+  color: #B22222;         /* rouge brique */
+  font-weight: bold;
+  font-size: 1.5vw;       /* taille adaptative selon écran */
+  animation: scroll-text 12s linear infinite; /* défilement fluide */
+}
+
+/* Animation du défilement de droite à gauche */
+@keyframes scroll-text {
+  0% { transform: translateX(100%); }   /* commence à droite */
+  100% { transform: translateX(-100%); } /* finit à gauche */
+}
+
+/* Ajustements pour mobile */
+@media (max-width: 600px) {
+  .marquee-text {
+    font-size: 4vw;       /* texte plus grand sur petit écran */
+  }
+}
 /* ===== CORRECTION TITRE ACCUEIL SOUS MENU FIXE ===== */
 body.accueil-page header {
   margin-top: 100px; /* ajuste selon la hauteur du menu */
 }
+
 
 
 
